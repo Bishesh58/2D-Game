@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - gameOver
+  - enemy
+  - checkMark
+  - UI_HangiLayer
+  - healthPotion
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - ground
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Sky
+    uniqueID: 376754293
+    locked: 0
+  - name: Clouds
+    uniqueID: 1037396737
+    locked: 0
+  - name: Mountain
+    uniqueID: 3491734213
+    locked: 0
+  - name: BackGround 1
+    uniqueID: 1406730751
+    locked: 0
+  - name: BackGround 2
+    uniqueID: 37853041
+    locked: 0
+  - name: BackGround 3
+    uniqueID: 872497649
+    locked: 0
+  - name: Player Ground
+    uniqueID: 2560593471
+    locked: 0
+  - name: Hide Player
+    uniqueID: 3059142723
+    locked: 0

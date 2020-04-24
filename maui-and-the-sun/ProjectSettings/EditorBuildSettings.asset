@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Project- Bishesh/Scenes/UI System.unity
+    guid: 9668c62c39386504f89345295fa10d70
+  - enabled: 1
+    path: Assets/Project- Bishesh/Scenes/Cut_Scene.unity
+    guid: df9bb4beb41a6bb4e97711eda2156ee9
+  - enabled: 1
+    path: Assets/Project- Bishesh/Scenes/Level-2.unity
+    guid: f7944cd9a465f124786c6a6151381f81
+  - enabled: 1
+    path: Assets/Scenes/Level 2 v1.0.unity
+    guid: 7cb894974e945054b97d37adb1ce1c59
+  - enabled: 1
+    path: Assets/Project- Bishesh/Scenes/Chanting_Rope.unity
+    guid: df2062dcfc208c542b7f9345d114aade
+  - enabled: 1
+    path: Assets/Scenes/Level 3 v1.0.unity
+    guid: f39b0744ff88bd5428cf13334a6d9059
+  m_configObjects: {}
