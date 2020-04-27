@@ -10,14 +10,16 @@ public class Chanting : MonoBehaviour
     public GameObject Rope;
     public GameObject KarakiaDialogue;
     public GameObject NextLevel;
-
     public TextMeshProUGUI textDisplay;
     public string[] sentences;
     private int index;
     public float typingSpeed;
+    
 
 
-   
+
+
+
     public void Start()
     {
         StartCoroutine(Type());
@@ -25,7 +27,7 @@ public class Chanting : MonoBehaviour
     public void DestoryInfo()
     {
         Destroy(dialogueBox.gameObject);
-        Rope.gameObject.SetActive(true);
+       
         KarakiaDialogue.gameObject.SetActive(true);
     }
 
@@ -43,8 +45,13 @@ public class Chanting : MonoBehaviour
         if (index < sentences.Length - 1)
         {
             index++;
+            if (index == 5)
+            {
+                Rope.gameObject.SetActive(true);
+            }
             textDisplay.text = "";
             StartCoroutine(Type());
+
         }
         else
         {

@@ -54,17 +54,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private UI_Inventory uiInventory;
 
-
+    private Scene scene;
     private void Awake()
     {
-        if (SceneManager.GetActiveScene().name == "Level-2")
+        scene = SceneManager.GetActiveScene();
+        if (scene.name == "Level-2")
         {
             inventory = new Inventory(UseItem, 25);
             uiInventory.SetInventory(inventory);
-        }
-        if (SceneManager.GetActiveScene().name == "Chanting_Rope")
-        {
-           
         }
     }
 
@@ -75,19 +72,25 @@ public class PlayerMovement : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody2D>();  //referencing the rigidbody2d component of the player
         myAnimator = GetComponent<Animator>();     //referencing the Animator component of the player
         currentHealth = maxHealth;
-        if (SceneManager.GetActiveScene().name == "Level-2" || SceneManager.GetActiveScene().name == "Level 2 v1.0")
+       
+        if (scene.name == "Level-2" || scene.name == "Level 2 v1.0")
         {
             healthbar.setMaxHealth(maxHealth);       //setting max health for player
         }
        
 
         //collectables
-        if (SceneManager.GetActiveScene().name == "Level 2 v1.0")
+        if (scene.name == "Level 2 v1.0")
         {
             healtpotionAmount = 0;
             flaxplantAmount = 0;
             woodAmount = 0;
         }
+        if (scene.name == "Level 3 v1.0")
+        {
+            healtpotionAmount = 0;
+        }
+
     }
 
 
@@ -95,13 +98,21 @@ public class PlayerMovement : MonoBehaviour
     {
         HandleInput();
         
-        if (SceneManager.GetActiveScene().name == "Level 2 v1.0")
+        if (scene.name == "Level 2 v1.0")
         {
             //update amount of collectables
             healtpotionCounter.text = "" + healtpotionAmount;
             flaxplantCounter.text = "" + flaxplantAmount;
             woodCounter.text = "" + woodAmount;
+            Debug.Log(healtpotionAmount);
         }
+        if (scene.name == "Level 3 v1.0")
+        {
+           
+            healtpotionCounter.text = "" + healtpotionAmount;
+           
+        }
+
     }
 
     public void UseItem(items inventoryItem)
