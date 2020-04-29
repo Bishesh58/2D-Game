@@ -108,9 +108,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (scene.name == "Level 3 v1.0")
         {
-           
             healtpotionCounter.text = "" + healtpotionAmount;
-           
         }
 
     }
@@ -130,6 +128,7 @@ public class PlayerMovement : MonoBehaviour
         ItemWorld itemWorld = collision.GetComponent<ItemWorld>();
         if (itemWorld != null)
         {
+            FindObjectOfType<AudioManager>().Play("collect"); //playing sound
             inventory.addItem(itemWorld.GetItem());
             itemWorld.DestroySelf();
 

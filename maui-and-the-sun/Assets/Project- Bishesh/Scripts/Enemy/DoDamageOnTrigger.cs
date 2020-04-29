@@ -15,7 +15,7 @@ public class DoDamageOnTrigger : MonoBehaviour
     {
         if (collision.gameObject.name == "Ch-Maui" && !isDamage)
         {
-            FindObjectOfType<AudioManager>().Play("button_press"); //playing sound
+            FindObjectOfType<AudioManager>().Play("hurt"); //playing sound
             isDamage = true;
             Damage.takedamage(1);
 

@@ -62,4 +62,34 @@ MonoBehaviour:
     loop: 0
     pitch: 0
     source: {fileID: 0}
+  - name: Karakia_Chanting
+    clip: {fileID: 8300000, guid: dbff7914abfc4284791e97e80e714b53, type: 3}
+    volume: 0.28
+    loop: 0
+    pitch: 0.63
+    source: {fileID: 0}
+  - name: collect
+    clip: {fileID: 8300000, guid: c952c74dd0dfb5c44b632b0c5564c936, type: 3}
+    volume: 0.28
+    loop: 0
+    pitch: 0.63
+    source: {fileID: 0}
+  - name: hurt
+    clip: {fileID: 8300000, guid: bcb65abc46c24f44eaa61e91440a3429, type: 3}
+    volume: 0.28
+    loop: 0
+    pitch: 0.63
+    source: {fileID: 0}
+  - name: collect
+    clip: {fileID: 0}
+    volume: 0.28
+    loop: 0
+    pitch: 0.63
+    source: {fileID: 0}
+  - name: collect
+    clip: {fileID: 0}
+    volume: 0.28
+    loop: 0
+    pitch: 0.63
+    source: {fileID: 0}
   audioMixer: {fileID: 24100000, guid: f76f74bca0cec0d4bb7cb9e2f27686f6, type: 2}

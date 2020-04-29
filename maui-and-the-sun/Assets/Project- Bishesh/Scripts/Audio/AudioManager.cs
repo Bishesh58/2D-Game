@@ -40,11 +40,9 @@ public class AudioManager : MonoBehaviour
         if (scene.name == "UI System")
         {
             Play("backgroundMusic");
-            Play("kai_karakia");
         }
         if (scene.name == "Cut_Scene")
         {
-            Debug.Log(scene.name);
             Play("Opening_scene");
         }
         
@@ -78,4 +76,8 @@ public class AudioManager : MonoBehaviour
         audioMixer.SetFloat("volume-music", volume);  //"volume" represents parameter from audioMixture
     }
 
+    public void setSoundEffects(float volume)
+    {
+        audioMixer.SetFloat("soundEffect", volume);
+    }
 }
