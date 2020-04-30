@@ -69,13 +69,13 @@ MonoBehaviour:
     pitch: 0.63
     source: {fileID: 0}
   - name: collect
-    clip: {fileID: 8300000, guid: c952c74dd0dfb5c44b632b0c5564c936, type: 3}
+    clip: {fileID: 8300000, guid: 3f00d18863ffd564880ae7726c07afd7, type: 3}
     volume: 0.28
     loop: 0
     pitch: 0.63
     source: {fileID: 0}
   - name: hurt
-    clip: {fileID: 8300000, guid: bcb65abc46c24f44eaa61e91440a3429, type: 3}
+    clip: {fileID: 8300000, guid: 32b1a2ef15831cf47a8a449b7db6bca8, type: 3}
     volume: 0.28
     loop: 0
     pitch: 0.63

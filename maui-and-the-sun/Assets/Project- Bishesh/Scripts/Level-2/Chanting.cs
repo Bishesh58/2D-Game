@@ -45,7 +45,7 @@ public class Chanting : MonoBehaviour
         if (index < sentences.Length - 1)
         {
             index++;
-            if (index == 5)
+            if (index == 4)
             {
                 Rope.gameObject.SetActive(true);
             }
