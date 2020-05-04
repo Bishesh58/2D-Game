@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class gameOverMenu : MonoBehaviour
 {
-    private ToggleGroup mode;
+    private ToggleGroup mode; 
 
    
     public void Quit()
@@ -19,7 +19,7 @@ public class gameOverMenu : MonoBehaviour
 
     public void retry()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        mode.GetComponent<ModeSelection>().activeToggle();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); //loading active scene again on calling this method
+        mode.GetComponent<ModeSelection>().activeToggle(); //set timer from depending on the default mode
     }
 }

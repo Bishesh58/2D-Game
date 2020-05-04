@@ -7,6 +7,7 @@ using System;
 [Serializable]
 public class items 
 {
+    //setting up items
     public enum ItemType
     {
         hoe,     
@@ -32,14 +33,17 @@ public class items
         branches,
     }
 
+    //exposing itemType
     public ItemType itemType;
     public int amount;
 
-
+    //getters
     public Sprite GetSprite()
     {
         return GetSprite(itemType);
     }
+
+    //method to get the sprite
     public Sprite GetSprite(ItemType itemType)
     {
         switch (itemType)
@@ -69,7 +73,7 @@ public class items
         }
     }
 
-
+    //checking if the item can be stack or not
     public bool IsStackable()
     {
         switch (itemType)

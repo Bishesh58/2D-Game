@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class useRope : MonoBehaviour, IPointerClickHandler
 {
+    //setting up fields for game objects
     public static bool isReadyToUse = false;
     public GameObject hintRope;
     public GameObject ropeTrigger;
@@ -17,19 +18,19 @@ public class useRope : MonoBehaviour, IPointerClickHandler
     public GameObject movedBrothers;
 
 
-
+    //when player clicks on to Rope slot
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (isReadyToUse)
+        if (isReadyToUse) //bool ready to use is true which means rope is available to use
         {
-            Destroy(movedBrothers);
-            hintRope.SetActive(false);
-            Destroy(ropeTrigger);
-            Rope.SetActive(true);
-            Rope1.SetActive(true);
-            Rope2.SetActive(true);
-            Rope3.SetActive(true);
-            BrotherHoldingRope.SetActive(true);
+            movedBrothers.gameObject.SetActive(false); //deactivating moved brothers
+            hintRope.SetActive(false); // hint message is disappered after using rope
+            Destroy(ropeTrigger); // destorying the rope trigger game object
+            Rope.SetActive(true); //showing the rope 
+            Rope1.SetActive(true); //showing the rope
+            Rope2.SetActive(true); //showing the rope
+            Rope3.SetActive(true); //showing the rope
+            BrotherHoldingRope.SetActive(true); //showing brothers holding rope
 
         }
     }

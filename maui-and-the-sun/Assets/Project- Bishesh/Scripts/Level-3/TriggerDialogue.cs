@@ -24,9 +24,9 @@ public class TriggerDialogue : MonoBehaviour
     }
     public void Update()
     {
-        if (playerInRange)
+        if (playerInRange) // when player collides with this game object
         {
-            DialogueBox.SetActive(true);
+            DialogueBox.SetActive(true); //Showing dialogue Box
         }
     }
 
@@ -46,6 +46,7 @@ public class TriggerDialogue : MonoBehaviour
         }
     }
 
+    //method for typing speed for letters of the dialogue
     IEnumerator Type()
     {
         foreach (char letter in sentences[index].ToCharArray())
@@ -55,6 +56,7 @@ public class TriggerDialogue : MonoBehaviour
         }
     }
 
+    //method to check if one sentence is completed and moving onto the next sentence
     public void nextSentences()
     {
         if (index < sentences.Length - 1)
@@ -66,19 +68,17 @@ public class TriggerDialogue : MonoBehaviour
         else
         {
             textDisplay.text = "";
-            stopDialogue();
+            stopDialogue(); //stopping the dialogue when all sentence is completed
             gameObject.SetActive(false);
         }
     }
 
     public void stopDialogue()
     {
-        DialogueBox.SetActive(false);
-        Brothers.SetActive(true);
-        useWoodHint.SetActive(true);
-        buildHut.woodIsReadyToUse = true;
-
-
+        DialogueBox.SetActive(false); //removing dialogue box
+        Brothers.SetActive(true); //showing up Brothers
+        useWoodHint.SetActive(true); //hint is shown
+        buildHut.woodIsReadyToUse = true; //player can click on wood for use
     }
 
 }

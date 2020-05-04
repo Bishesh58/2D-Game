@@ -5,6 +5,7 @@ using TMPro;
 
 public class Tree2 : MonoBehaviour
 {
+    //setting up parameters
     private bool playerInRange;
     public GameObject secondTree;
     public TextMeshProUGUI textDisplay;
@@ -21,17 +22,18 @@ public class Tree2 : MonoBehaviour
 
     public void Update()
     {
+        //checking if player is close to tree and keyword 'T' is pressed or not
         if (playerInRange && Input.GetKeyDown(KeyCode.T))
         {
             secondTree.SetActive(true);
         }
     }
-
+    //Box colliders to check if player collides with the tree
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.name == "Ch-Maui")
         {
-            playerInRange = true;
+            playerInRange = true; //player is close to the tree2
         }
     }
 
@@ -39,10 +41,10 @@ public class Tree2 : MonoBehaviour
     {
         if (other.gameObject.name == "Ch-Maui")
         {
-            playerInRange = false;
+            playerInRange = false; //player is far from the tree2
         }
     }
-
+    //returns methods after few seconds(conversation letters to be typed accordingly)
     IEnumerator Type()
     {
         foreach (char letter in sentences[index].ToCharArray())
@@ -51,7 +53,7 @@ public class Tree2 : MonoBehaviour
             yield return new WaitForSeconds(typingSpeed);
         }
     }
-
+    //method to check if the Dialogue sentence is completed
     public void nextSentences()
     {
         if (index < sentences.Length - 1)
@@ -62,6 +64,7 @@ public class Tree2 : MonoBehaviour
         }
         else
         {
+            //if dialogue is finished then we stop the deactive the tree2
             textDisplay.text = "";
             stopDialogue();
             audio.gameObject.SetActive(true);

@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 
 public class UI_ItemDrag : MonoBehaviour
 {
+    //global instance for getting and setting dragged item
     public static UI_ItemDrag Instance { get; private set; }
 
     private Canvas canvas;
@@ -25,21 +26,22 @@ public class UI_ItemDrag : MonoBehaviour
         image = transform.Find("image").GetComponent<Image>();
         parentRectTransform = transform.parent.GetComponent<RectTransform>();
 
-        Hide();
-       
+        Hide(); //method to hide item
     }
 
     private void Update()
     {
-        UpdatePosition();
+        UpdatePosition(); 
     }
 
+    //method to update the position of the item when it is dropped on the slot
     private void UpdatePosition()
     {
         RectTransformUtility.ScreenPointToLocalPointInRectangle(parentRectTransform, Input.mousePosition, null, out Vector2 localPoint);
         transform.localPosition = localPoint;
     }
 
+    //getting and setting items
     public items GetItem()
     {
         return item;
@@ -54,12 +56,13 @@ public class UI_ItemDrag : MonoBehaviour
     {
         image.sprite = sprite;
     }
-
+    //method to hide items
     public void Hide()
     {
         gameObject.SetActive(false);
     }
 
+    //method to show item
     public void Show(items item)
     {
         gameObject.SetActive(true);

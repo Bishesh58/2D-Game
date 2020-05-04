@@ -6,10 +6,9 @@ using UnityEngine.EventSystems;
 public class Drop_Item : MonoBehaviour, IDragHandler
 {
 
-
+    //event for handling drop item
     public void OnDrag(PointerEventData eventData)
     {
         Debug.Log("Drop received");
-        
     }
 }

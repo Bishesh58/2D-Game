@@ -9,17 +9,17 @@ public class MainMenu : MonoBehaviour
     public GameObject InfoBox;
     public void PlayGame()
     {
-        SceneManager.LoadScene(SceneManager. GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager. GetActiveScene().buildIndex + 1); //loading up next scene index
       
     }
     public void QuiteGame()
     {
         Debug.Log("Quite!");
-        Application.Quit();
+        Application.Quit(); //player can exit from the application
     }
 
     public void DestoryObject()
     {
-        Destroy(InfoBox);
+        Destroy(InfoBox); //destorying Information message box
     }
 }

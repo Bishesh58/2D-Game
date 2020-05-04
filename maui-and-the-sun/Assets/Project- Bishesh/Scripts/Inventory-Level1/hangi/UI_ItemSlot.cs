@@ -19,8 +19,6 @@ public class UI_ItemSlot : MonoBehaviour, IDropHandler
     {
         UI_ItemDrag.Instance.Hide();
         onDropAction();
-
-
     }
 }
 

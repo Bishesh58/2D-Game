@@ -9,7 +9,8 @@ public class AudioManager : MonoBehaviour
     public Sound[] sounds;
     private Scene scene;
 
-    public static AudioManager instance;
+    //creating global AudioManager instance
+    public static AudioManager instance; 
     void Awake()
     {
         if (instance == null)
@@ -25,7 +26,7 @@ public class AudioManager : MonoBehaviour
         foreach (Sound s in sounds)   
         {
             s.source = gameObject.AddComponent<AudioSource>();
-            s.source.clip = s.clip;         //controlling the clip,volume & pitch
+            s.source.clip = s.clip;    //controlling volume, pitch and loop through component
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
@@ -35,7 +36,8 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        scene = SceneManager.GetActiveScene();
+        //Determining which scene is currently active and playing sounds accordingly
+        scene = SceneManager.GetActiveScene(); 
        
         if (scene.name == "UI System")
         {
@@ -45,11 +47,10 @@ public class AudioManager : MonoBehaviour
         {
             Play("Opening_scene");
         }
-        
-        
        
     }
 
+    //method
     public void Play (string name)
     {
        Sound s = Array.Find(sounds, Sound => Sound.name == name); 
@@ -62,7 +63,7 @@ public class AudioManager : MonoBehaviour
     }
 
 
-    // controlling master volume from setting menu
+    // controlling master volume from setting menu by exposing the parameters from audio Mixture
     public AudioMixer audioMixer;
     public void setVolume(float volume)
     {

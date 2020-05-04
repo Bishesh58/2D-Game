@@ -22,9 +22,9 @@ public class TriggerDialogue2 : MonoBehaviour
     }
     public void Update()
     {
-        if (playerInRange)
+        if (playerInRange) //player collides with this game object 
         {
-            DialogueBox2.SetActive(true);
+            DialogueBox2.SetActive(true); //showing up dialogue box
         }
     }
 
@@ -32,7 +32,7 @@ public class TriggerDialogue2 : MonoBehaviour
     {
         if (other.gameObject.name == "Ch-Maui")
         {
-            playerInRange = true;
+            playerInRange = true; 
         }
     }
 
@@ -44,6 +44,7 @@ public class TriggerDialogue2 : MonoBehaviour
         }
     }
 
+    //method to type letter on given speed
     IEnumerator Type()
     {
         foreach (char letter in sentences[index].ToCharArray())
@@ -53,6 +54,7 @@ public class TriggerDialogue2 : MonoBehaviour
         }
     }
 
+    //checking if one sentence is completed and moving into the next sentence
     public void nextSentences()
     {
         if (index < sentences.Length - 1)
@@ -64,7 +66,7 @@ public class TriggerDialogue2 : MonoBehaviour
         else
         {
             textDisplay.text = "";
-            stopDialogue();
+            stopDialogue(); //stopping dialogues after all sentences are completed 
             gameObject.SetActive(false);
         }
     }
@@ -72,8 +74,8 @@ public class TriggerDialogue2 : MonoBehaviour
     public void stopDialogue()
     {
         Destroy(DialogueBox2);
-        Destroy(Brothers.gameObject);
-        MovedBrothers.SetActive(true);
+        Destroy(Brothers.gameObject); //destorying old brothers character
+        MovedBrothers.SetActive(true); //showing moved brothers
     }
 
 }

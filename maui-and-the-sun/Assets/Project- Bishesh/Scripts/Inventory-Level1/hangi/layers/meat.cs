@@ -5,10 +5,10 @@ using System;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-
+//class to handle meat Layer
 public class meat : MonoBehaviour, IDropHandler
 {
-   
+    //event to check if item is dropped
     public event EventHandler<OnItemDroppedEventArgs> OnItemDropped;
     private Image checkedImage;
     private int dropCount;
@@ -19,29 +19,31 @@ public class meat : MonoBehaviour, IDropHandler
     }
     public class OnItemDroppedEventArgs : EventArgs
     {
-        public items items;
+        public items items; // getting the item from class items
     }
 
+    // event handler for item is being dropped on this layer
     public void OnDrop(PointerEventData eventData)
     {
-        items items = UI_ItemDrag.Instance.GetItem();
-        OnItemDropped?.Invoke(this, new OnItemDroppedEventArgs { items = items });
-        if (items.itemType == items.ItemType.meat)
+        items items = UI_ItemDrag.Instance.GetItem(); // getting dragged item from the UI_ItemDrag class
+        OnItemDropped?.Invoke(this, new OnItemDroppedEventArgs { items = items }); 
+        if (items.itemType == items.ItemType.meat)  //checking if dropped item is match with right slot 
         {
-            dropCount++;
+            dropCount++; //counting dropped item on each time it is being dropped into the slot
             UI_Item d = eventData.pointerDrag.GetComponent<UI_Item>();
+            //checking if cursor is dragging something
             if (eventData.pointerDrag != null)
             {
-                d.parentToReturn = this.transform;
-                eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
-                checkedImage.gameObject.SetActive(true);
+                d.parentToReturn = this.transform; //setting current slot as parent slot for the dropped item
+                eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;  //snapping the item onto the slot
+                checkedImage.gameObject.SetActive(true); //correct item is dropped and green checkmark is shown 
                 if (dropCount <=1)
                 {
-                    Hangi_layerController.checkmarkCount++;
+                    Hangi_layerController.checkmarkCount++; //global int to count how many green checkmark are active
                 }
             }
-            eventData.pointerDrag = null;
-            UI_ItemDrag.Instance.Hide();
+            eventData.pointerDrag = null; // player can not drag item anymore
+            UI_ItemDrag.Instance.Hide(); //making sure instance of drag item are hiding after the dropped
         }
        
     }

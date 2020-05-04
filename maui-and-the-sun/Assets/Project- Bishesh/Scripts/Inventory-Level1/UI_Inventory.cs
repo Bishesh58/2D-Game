@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+//Class that handles the inventory interface 
 public class UI_Inventory : MonoBehaviour
 {
     [SerializeField] private Transform pfUI_Item;
@@ -13,18 +14,19 @@ public class UI_Inventory : MonoBehaviour
 
     private void Awake()
     {
+        //getting the containter and template of the inventory slot
         itemSlotContainer = transform.Find("ItemSlotContainer");
         itemSlotTemplate = itemSlotContainer.Find("ItemSlotTemplate");
 
-        itemSlotTemplate.gameObject.SetActive(false);
+        itemSlotTemplate.gameObject.SetActive(false); 
     }
    
 
     public void SetInventory (Inventory inventory)
     {
         this.inventory = inventory;
-        RefreshInventoryItems();
-        inventory.OnItemListChange += Inventory_OnItemListChange;
+        RefreshInventoryItems();  // to constantly check if the inventory item is being changed
+        inventory.OnItemListChange += Inventory_OnItemListChange; //subscribed the event when item is being changed on the inventory
     }
 
     private void Inventory_OnItemListChange(object sender, System.EventArgs e)
@@ -37,21 +39,19 @@ public class UI_Inventory : MonoBehaviour
         foreach (Transform child in itemSlotContainer)
         {
             if (child == itemSlotTemplate) continue;
-            Destroy(child.gameObject);
+            Destroy(child.gameObject); 
         }
 
         int x = 0;
         int y = 0;
         float itemSlotCellSize = 30f;
 
+        //adding up items into the inventory
         foreach (Inventory.InventorySlot inventorySlot in inventory.GetInventorySlotArray())
         {
             items items = inventorySlot.GetItem();
            RectTransform itemSlotRectTransform = Instantiate(itemSlotTemplate, itemSlotContainer).GetComponent<RectTransform>();
             itemSlotRectTransform.gameObject.SetActive(true);
-            
-            
-
             //TextMeshProUGUI uiText = itemSlotRectTransform.Find("amountText").GetComponent<TextMeshProUGUI>();
             //if (items.amount>1)
             //{
@@ -71,7 +71,7 @@ public class UI_Inventory : MonoBehaviour
                 uiItemTransform.GetComponent<RectTransform>().anchoredPosition = itemSlotRectTransform.anchoredPosition;
                 UI_Item uiItem = uiItemTransform.GetComponent<UI_Item>();
                 uiItem.SetItem(items);
-                uiItem.SetSprite(items.GetSprite());
+                uiItem.SetSprite(items.GetSprite()); 
             }
 
             Inventory.InventorySlot tmpInventorySlot = inventorySlot;

@@ -1,7 +1,7 @@
 ﻿using UnityEngine.Audio;
 using UnityEngine;
 
-
+// creating a sound class to access different sounds
 [System.Serializable]
 public class Sound 
 {
@@ -19,8 +19,4 @@ public class Sound
 
     [HideInInspector]
     public AudioSource source;
-
-
-
-   
 }

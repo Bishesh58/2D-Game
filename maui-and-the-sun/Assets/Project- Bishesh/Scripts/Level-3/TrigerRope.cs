@@ -15,7 +15,7 @@ public class TrigerRope : MonoBehaviour
     {
         if (other.gameObject.name == "Ch-Maui")
         {
-            Hint.SetActive(true);
+            Hint.SetActive(true); //hint message box is shown 
             useRope.isReadyToUse = true;
             // maui.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 

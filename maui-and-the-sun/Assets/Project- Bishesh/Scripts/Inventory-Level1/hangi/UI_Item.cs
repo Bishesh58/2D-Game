@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+
+//class to handle when item is being dragged 
 public class UI_Item : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
 
@@ -16,20 +18,21 @@ public class UI_Item : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IE
    
     private void Awake()
     {
-        rectTransform = GetComponent<RectTransform>();
+        rectTransform = GetComponent<RectTransform>(); 
         canvasGroup = GetComponent<CanvasGroup>();
         canvas = GetComponentInParent<Canvas>();
-        image = transform.Find("image").GetComponent<Image>();
+        image = transform.Find("image").GetComponent<Image>(); //getting image component of the drag item
     }
 
 
+    //event when item is started for dragging
     public void OnBeginDrag(PointerEventData eventData)
     {
-        parentToReturn = this.transform.parent;
+        parentToReturn = this.transform.parent; //when dropped on the slot, item position is parent to dropped slot
         this.transform.SetParent(this.transform.parent.parent);
         canvasGroup.alpha = .5f;
         canvasGroup.blocksRaycasts = false;
-        UI_ItemDrag.Instance.Show(items);
+        UI_ItemDrag.Instance.Show(items); // showing what item is being dragged
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -38,6 +41,7 @@ public class UI_Item : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IE
        
     }
 
+    //event when item is finished dragging
     public void OnEndDrag(PointerEventData eventData)
     {
         canvasGroup.alpha = 1f;
@@ -51,6 +55,7 @@ public class UI_Item : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IE
     {
     }
 
+    //getters and setters for sprite of the item
     public void SetSprite(Sprite sprite)
     {
         image.sprite = sprite;

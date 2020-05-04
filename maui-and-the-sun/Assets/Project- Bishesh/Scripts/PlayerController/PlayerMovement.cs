@@ -49,16 +49,16 @@ public class PlayerMovement : MonoBehaviour
     public int currentHealth;
     public HealthBar healthbar;
    
-
+    //inventory system
     private Inventory inventory;
     [SerializeField]
     private UI_Inventory uiInventory;
-
+    
     private Scene scene;
     private void Awake()
     {
-        scene = SceneManager.GetActiveScene();
-        if (scene.name == "Level-2")
+        scene = SceneManager.GetActiveScene(); //getting the active scene
+        if (scene.name == "Level-2") //inventory is set on to level 1
         {
             inventory = new Inventory(UseItem, 25);
             uiInventory.SetInventory(inventory);
@@ -68,14 +68,14 @@ public class PlayerMovement : MonoBehaviour
   
     void Start()
     {
-        facingRight = true;     //player always face on right direction
+        facingRight = true;   //player always face on right direction
         myRigidbody = GetComponent<Rigidbody2D>();  //referencing the rigidbody2d component of the player
         myAnimator = GetComponent<Animator>();     //referencing the Animator component of the player
         currentHealth = maxHealth;
        
         if (scene.name == "Level-2" || scene.name == "Level 2 v1.0")
         {
-            healthbar.setMaxHealth(maxHealth);       //setting max health for player
+            healthbar.setMaxHealth(maxHealth);   //setting max health for player
         }
        
 
@@ -96,9 +96,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update() 
     {
-        HandleInput();
+        HandleInput(); //method call
         
-        if (scene.name == "Level 2 v1.0")
+        if (scene.name == "Level 2 v1.0") //setting up text amount for inventory item on level 2 
         {
             //update amount of collectables
             healtpotionCounter.text = "" + healtpotionAmount;
@@ -106,16 +106,17 @@ public class PlayerMovement : MonoBehaviour
             woodCounter.text = "" + woodAmount;
             Debug.Log(healtpotionAmount);
         }
-        if (scene.name == "Level 3 v1.0")
+        if (scene.name == "Level 3 v1.0") // collecting health potion on level 3 
         {
             healtpotionCounter.text = "" + healtpotionAmount;
         }
 
     }
 
+    //setting up slots for inventory
     public void UseItem(items inventoryItem)
     {
-        GetInventory();
+        GetInventory(); 
     }
     public Inventory GetInventory()
     {
@@ -126,14 +127,15 @@ public class PlayerMovement : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         ItemWorld itemWorld = collision.GetComponent<ItemWorld>();
-        if (itemWorld != null)
+        
+        if (itemWorld != null) //player collecting items when colliding on it
         {
-            FindObjectOfType<AudioManager>().Play("collect"); //playing sound
-            inventory.addItem(itemWorld.GetItem());
-            itemWorld.DestroySelf();
+            FindObjectOfType<AudioManager>().Play("collect"); //playing sound for collecting item
+            inventory.addItem(itemWorld.GetItem()); //adding items into the inventory
+            itemWorld.DestroySelf(); //removing item from the scene
 
         }
-
+        //collecting helath potion, wood and flax plant
         if (collision.GetComponent<HealthPotion>())
         {
             healtpotionAmount += 1;
@@ -153,16 +155,18 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private bool count;
+
+    //method to use health potion
     public void useHealthPotion()
     {
         
         if (!(healtpotionAmount <= 0))
         {
             count = true;
-            healtpotionAmount -= 1;
-            increaseHealth(1);
+            healtpotionAmount -= 1; //decreasing health potion from the inventory on using
+            increaseHealth(1); //increasing the health of the player
         }
-        if (healtpotionAmount <= 0)
+        if (healtpotionAmount <= 0) //player can not use health potion when health potion is zero
         {
             healtpotionAmount = 0;
             count = false;
@@ -187,11 +191,11 @@ public class PlayerMovement : MonoBehaviour
         ResetValues();               //method call
     }
 
-    private void HandleMovement(float horizontal)
+    private void HandleMovement(float horizontal) //Controlling the player Movement
     {
         if (myRigidbody.velocity.y < 0)
         {
-            myAnimator.SetBool("land", true);
+            myAnimator.SetBool("land", true); //landing animation is set when player is not jumping
         }
     
         if (!myAnimator.GetBool("slide") &&!this.myAnimator.GetCurrentAnimatorStateInfo(0).IsTag("Attack") && (isGrounded || airControl)) // if player is not(!) attacking 
@@ -199,19 +203,18 @@ public class PlayerMovement : MonoBehaviour
             myRigidbody.velocity = new Vector2(horizontal * MovementSpeed, myRigidbody.velocity.y);   //moving player with velocity
         }
 
-        if (isGrounded && jump)
+        if (isGrounded && jump) //player is jumping
         {
-            isGrounded = false;
-            myRigidbody.AddForce(new Vector2(0, jumpForce));
-            myAnimator.SetTrigger("jump");
+            isGrounded = false; //player is not on ground
+            myRigidbody.AddForce(new Vector2(0, jumpForce)); //moving player up with give velocity
+            myAnimator.SetTrigger("jump"); //showing jumping animation
 
 
         }
 
-
-        if (slide && !this.myAnimator.GetCurrentAnimatorStateInfo(0).IsName("slide"))
+        if (slide && !this.myAnimator.GetCurrentAnimatorStateInfo(0).IsName("slide")) //player is sliding
         {
-            myAnimator.SetBool("slide", true);
+            myAnimator.SetBool("slide", true); //sliding animation is shown
         }
         else if (!this.myAnimator.GetCurrentAnimatorStateInfo(0).IsName("slide")) // slide is name of slide animation
         {
@@ -232,7 +235,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (jumpAttack && !isGrounded && !this.myAnimator.GetCurrentAnimatorStateInfo(1).IsName("jumpAttack"))
         {
-            myAnimator.SetBool("jumpAttack", true);
+            myAnimator.SetBool("jumpAttack", true); //showing the player attacking while on air
         }
         if (!jumpAttack && !this.myAnimator.GetCurrentAnimatorStateInfo(1).IsName("jumpAttack"))
         {
@@ -241,21 +244,23 @@ public class PlayerMovement : MonoBehaviour
 
         
     }
+
+    //handing keypress
     private void HandleInput()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            jump = true;
+            jump = true; //player can jump if 'space' is pressed
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))   // checking if  'E' is pressed of keyboard
+        if (Input.GetKeyDown(KeyCode.Q))   // checking if 'Q' is pressed of keyboard
         {
-            attack = true;
-            jumpAttack = true;
+            attack = true; //player can attack if 'Q' is pressed
+            jumpAttack = true; //player can attack on air if 'Q' is pressed
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
-            slide = true;
+            slide = true; //player is sliding on 'E' press
         }
        
     }
@@ -264,7 +269,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (horizontal > 0 && !facingRight || horizontal < 0 && facingRight)
         {
-            facingRight = !facingRight;
+            facingRight = !facingRight; //player facing y-axis
 
             Vector3 theScale = transform.localScale;
             theScale.x *= -1;
@@ -291,6 +296,7 @@ public class PlayerMovement : MonoBehaviour
         return  transform.Find("groundCheck").GetComponent<GroundCheck>().isGrounded;
     }
 
+    //handling different layer of the animator, e.g land & air
     private void HandleLayers()
     {
         if (!isGrounded)
@@ -304,24 +310,24 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-
+    // player taking damage on collision with spikes
     public void takedamage(int damage)
     {
-        currentHealth -= damage;
+        currentHealth -= damage; //health is being decreade by 1
        
-        healthbar.setHealth(currentHealth);
-
+        healthbar.setHealth(currentHealth); //setting up current health after damage is taken
        
-
+        //checking if player's health is zero
         if (currentHealth<0)
         {
-            myAnimator.SetTrigger("dead");
+            myAnimator.SetTrigger("dead");  //playing death animation when player's health is less than zero
         }
     }
 
+    //player can use health potions to increase health
     public void increaseHealth(int healthPlus)
     {
-        currentHealth += healthPlus;
+        currentHealth += healthPlus; //health is increaded on using health Potion
         healthbar.setHealth(currentHealth);
     }
 

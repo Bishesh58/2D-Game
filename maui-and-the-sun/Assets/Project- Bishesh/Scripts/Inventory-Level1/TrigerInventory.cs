@@ -10,10 +10,11 @@ public class TrigerInventory : MonoBehaviour
     public GameObject messagebox;
 
   
-   
+   //Hangi Inventory is being show when player approach on the right place
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //checking if the player is being collided with this object
         if (collision.gameObject.name == "Ch-Maui")
         {
             Destroy(gameObject);
@@ -21,10 +22,6 @@ public class TrigerInventory : MonoBehaviour
             messagebox.gameObject.SetActive(true);
             Maui.GetComponent<Rigidbody2D>().isKinematic = true;
             Maui.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
-
         } 
     }
-   
-
-   
 }

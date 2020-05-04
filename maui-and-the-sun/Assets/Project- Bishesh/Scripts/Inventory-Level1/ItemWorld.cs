@@ -6,13 +6,15 @@ using UnityEngine;
 public class ItemWorld : MonoBehaviour
 {
     
-
+    //spawning items into the scene with the help of pfItem
     public static ItemWorld spawnItemWorld(Vector3 position, items items)
     {
-       Transform transform =  Instantiate(ItemAssets.Instance.pfItemWorld, position, Quaternion.identity);
+        //Instantiating pfItemWord
+       Transform transform =  Instantiate(ItemAssets.Instance.pfItemWorld, position, Quaternion.identity); 
 
+        //getting items from the class ItemWorld
         ItemWorld itemWorld = transform.GetComponent<ItemWorld>();
-        itemWorld.SetItem(items);
+        itemWorld.SetItem(items); //setting up item
 
         return itemWorld;
     }
@@ -25,16 +27,14 @@ public class ItemWorld : MonoBehaviour
 
     private void Awake()
     {
-        spriteRender = GetComponent<SpriteRenderer>();
-       
+        spriteRender = GetComponent<SpriteRenderer>(); //setting up SpriteRenderer
     }
 
-
+    //getters and setters
     public void SetItem(items items)
     {
         this.items = items;
         spriteRender.sprite = items.GetSprite();
-      
     }
 
     public items GetItem()
@@ -42,6 +42,7 @@ public class ItemWorld : MonoBehaviour
         return items;
     }
 
+    //destorying items after the player collects items from the scene
     public void DestroySelf()
     {
         Destroy(gameObject);
