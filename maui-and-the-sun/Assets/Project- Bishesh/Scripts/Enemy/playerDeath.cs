@@ -15,7 +15,7 @@ public class playerDeath : MonoBehaviour
     private void Start()
     {
         player = GameObject.Find("Ch-Maui").GetComponent<PlayerMovement>();
-         timer = GameObject.Find("Timer").GetComponent<TimerUI>();
+        timer = GameObject.Find("Timer").GetComponent<TimerUI>();
 
     }
     // if the player collides with this object,
@@ -31,7 +31,7 @@ public class playerDeath : MonoBehaviour
         }
     }
     //method 
-   public IEnumerator wait()
+    public IEnumerator wait()
     {
         yield return new WaitForSeconds(3);
         Destroy(GameObject.Find("Ch-Maui"));  //Destorying player

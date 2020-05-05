@@ -43,29 +43,25 @@ public class ParticleCollissionDamage : MonoBehaviour
 
         if (collision.transform.tag == "Player" && !isDamage)
         {
-            Debug.Log("Damage");
-            Damage.takedamage(1);
+            Debug.Log("Particle Damage");
+            Damage.takedamage(2);
             isDamage = true;
             Damage.myAnimator.SetLayerWeight(2, 1);
-           
-
 
             if (Damage.currentHealth <= 0f)
             {
                 Debug.Log("player died");
                 gameOverScrn.SetActive(true);
                 Destroy(player.gameObject);
-
-
             }
             else
             {
                 //
             }
 
-            PARTICLE_COLLISION = false;
+           // PARTICLE_COLLISION = false;
         }
-
+       
  
     }
 
@@ -74,35 +70,23 @@ public class ParticleCollissionDamage : MonoBehaviour
     {
         if (PARTICLE_COLLISION)
         {
-
-            isDamage = false;
-            Damage.myAnimator.SetLayerWeight(2, 0);
+            //isDamage = false;
+            //Damage.myAnimator.SetLayerWeight(2, 0);
             // now you can write your code for after collision ends
         }
-
+        if (!PARTICLE_COLLISION)
+        {
+            Damage.myAnimator.SetLayerWeight(2, 0);
+        }
         if (Damage.currentHealth <= 0f)
         {
             Debug.Log("player died");
             gameOverScrn.SetActive(true);
             Destroy(player.gameObject);
-
-
         }
         else
         {
             //
         }
     }
-
-
-
-    
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-
-        isDamage = false;
-        Damage.myAnimator.SetLayerWeight(2, 0);
-    }
-    
-
 }

@@ -47,7 +47,6 @@ public class AudioManager : MonoBehaviour
         {
             Play("Opening_scene");
         }
-       
     }
 
     //method

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4589458036849290}
   - component: {fileID: 212664629098026388}
-  - component: {fileID: 61057078502081972}
   m_Layer: 0
   m_Name: GrassyLedge_1 (4)
   m_TagString: Untagged
@@ -82,32 +81,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &61057078502081972
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1009035389257564}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.15163803, y: -0.17920446}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.99, y: 7.06}
-    newSize: {x: 5.99, y: 7.06}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 5.2456098, y: 6.5361705}
-  m_EdgeRadius: 0
 --- !u!1 &1107234032726000
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,7 +550,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4334454926393248}
   - component: {fileID: 212393949901135918}
-  - component: {fileID: 60345059105920302}
   m_Layer: 0
   m_Name: Trunk_1 (1)
   m_TagString: Untagged
@@ -649,117 +621,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &60345059105920302
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1410436291614884}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.25, y: 3.51}
-    newSize: {x: 10.25, y: 3.51}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -2.105, y: -0.955}
-      - {x: -1.9549999, y: -0.91499996}
-      - {x: -1.5749999, y: -0.815}
-      - {x: -1.375, y: -0.78499997}
-      - {x: -1.235, y: -0.775}
-      - {x: -0.98499995, y: -0.755}
-      - {x: -0.53499997, y: -0.72499996}
-      - {x: -0.525, y: -0.715}
-      - {x: -0.065, y: -0.715}
-      - {x: -0.055, y: -0.72499996}
-      - {x: 0.45499998, y: -0.72499996}
-      - {x: 0.465, y: -0.73499995}
-      - {x: 0.53499997, y: -0.745}
-      - {x: 1.045, y: -0.805}
-      - {x: 1.3349999, y: -0.835}
-      - {x: 1.545, y: -0.885}
-      - {x: 1.685, y: -0.91499996}
-      - {x: 2.075, y: -1.005}
-      - {x: 2.2849998, y: -1.055}
-      - {x: 2.655, y: -1.155}
-      - {x: 2.965, y: -1.245}
-      - {x: 3.095, y: -1.285}
-      - {x: 3.2849998, y: -1.365}
-      - {x: 3.5049999, y: -1.4549999}
-      - {x: 3.635, y: -1.545}
-      - {x: 3.695, y: -1.5849999}
-      - {x: 3.7849998, y: -1.635}
-      - {x: 3.8349998, y: -1.645}
-      - {x: 3.995, y: -1.645}
-      - {x: 4.1949997, y: -1.5649999}
-      - {x: 4.345, y: -1.475}
-      - {x: 4.395, y: -1.365}
-      - {x: 4.395, y: -1.3349999}
-      - {x: 4.205, y: -1.145}
-      - {x: 4.235, y: -1.135}
-      - {x: 4.435, y: -1.225}
-      - {x: 4.605, y: -1.295}
-      - {x: 4.705, y: -1.3149999}
-      - {x: 4.825, y: -1.3149999}
-      - {x: 4.855, y: -1.235}
-      - {x: 4.9849997, y: -1.2049999}
-      - {x: 5.095, y: -1.145}
-      - {x: 5.115, y: -1.115}
-      - {x: 5.115, y: -1.0749999}
-      - {x: 5.075, y: -0.97499996}
-      - {x: 4.9849997, y: -0.805}
-      - {x: 4.955, y: -0.78499997}
-      - {x: 4.785, y: -0.72499996}
-      - {x: 4.665, y: -0.66499996}
-      - {x: 4.555, y: -0.635}
-      - {x: 4.645, y: -0.635}
-      - {x: 4.136544, y: -0.47115326}
-      - {x: 3.049613, y: -0.2734604}
-      - {x: 0.98549175, y: 0.33675385}
-      - {x: -1.3153124, y: 0.63056946}
-      - {x: -3.70996, y: 0.20681763}
-      - {x: -5.125, y: -0.205}
-      - {x: -5.095, y: -0.21499999}
-      - {x: -4.995, y: -0.24499999}
-      - {x: -4.835, y: -0.325}
-      - {x: -4.755, y: -0.475}
-      - {x: -4.785, y: -0.515}
-      - {x: -4.895, y: -0.695}
-      - {x: -4.915, y: -0.73499995}
-      - {x: -4.775, y: -0.805}
-      - {x: -4.555, y: -0.875}
-      - {x: -4.3849998, y: -0.945}
-      - {x: -4.185, y: -1.015}
-      - {x: -4.065, y: -1.115}
-      - {x: -3.905, y: -1.245}
-      - {x: -3.895, y: -1.3349999}
-      - {x: -3.865, y: -1.4549999}
-      - {x: -3.8249998, y: -1.485}
-      - {x: -3.5649998, y: -1.505}
-      - {x: -3.445, y: -1.4549999}
-      - {x: -3.465, y: -1.475}
-      - {x: -3.5049999, y: -1.555}
-      - {x: -3.385, y: -1.615}
-      - {x: -3.215, y: -1.665}
-      - {x: -3.125, y: -1.6949999}
-      - {x: -2.905, y: -1.755}
-      - {x: -2.845, y: -1.755}
-      - {x: -2.695, y: -1.745}
-      - {x: -2.605, y: -1.6949999}
-      - {x: -2.485, y: -1.4649999}
-      - {x: -2.2649999, y: -1.0749999}
 --- !u!1 &1446882093809258
 GameObject:
   m_ObjectHideFlags: 0
@@ -1337,7 +1198,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4125890969659412}
   - component: {fileID: 212475229497650744}
-  - component: {fileID: 61273188364673480}
   m_Layer: 0
   m_Name: GrassyLedge_1 (4)
   m_TagString: Untagged
@@ -1409,32 +1269,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &61273188364673480
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1650289372979078}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.15163803, y: -0.17920446}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.99, y: 7.06}
-    newSize: {x: 5.99, y: 7.06}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 5.2456098, y: 6.5361705}
-  m_EdgeRadius: 0
 --- !u!1 &1682493425170720
 GameObject:
   m_ObjectHideFlags: 0

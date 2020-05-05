@@ -80,14 +80,14 @@ MonoBehaviour:
     loop: 0
     pitch: 0.63
     source: {fileID: 0}
-  - name: collect
-    clip: {fileID: 0}
-    volume: 0.28
+  - name: sun_damage
+    clip: {fileID: 8300000, guid: d2af5a125f4db52448ddc2beec771f4e, type: 3}
+    volume: 1
     loop: 0
     pitch: 0.63
     source: {fileID: 0}
-  - name: collect
-    clip: {fileID: 0}
+  - name: bgLevel3
+    clip: {fileID: 8300000, guid: 31d78cc1bff892e42a5a47ca2828c49b, type: 3}
     volume: 0.28
     loop: 0
     pitch: 0.63

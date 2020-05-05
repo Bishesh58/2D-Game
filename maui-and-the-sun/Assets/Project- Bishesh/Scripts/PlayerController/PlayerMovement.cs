@@ -314,7 +314,6 @@ public class PlayerMovement : MonoBehaviour
     public void takedamage(int damage)
     {
         currentHealth -= damage; //health is being decreade by 1
-       
         healthbar.setHealth(currentHealth); //setting up current health after damage is taken
        
         //checking if player's health is zero
