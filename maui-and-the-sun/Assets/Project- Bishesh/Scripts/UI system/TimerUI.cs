@@ -13,12 +13,14 @@ public class TimerUI : MonoBehaviour
     [SerializeField]
     GameObject gameOverScrn;
     GameObject player;
+    private ToggleGroup mode;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
+        mode.GetComponent<ModeSelection>().activeToggle();
         gameOverScrn = GameObject.Find("gameOverScreen");
         player = GameObject.Find("Ch-Maui");
         gameOverScrn.SetActive(false); //hiding game over screen on starting the game                    
@@ -36,14 +38,14 @@ public class TimerUI : MonoBehaviour
             countdownStartValue--;
             Invoke("countdownTimer", 1.0f);
         }
-       
-        ////when time is up game over screen is active
-        //else
-        //{
-        //    timerUI.text = "Time up!";
-        //    gameOverScrn.SetActive(true);
-        //    Destroy(player.gameObject);
-        //}
+
+        //when time is up game over screen is active
+        else
+        {
+            timerUI.text = "Time up!";
+            gameOverScrn.SetActive(true);
+            Destroy(player.gameObject);
+        }
     }
 
    
