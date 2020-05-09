@@ -320,6 +320,7 @@ public class PlayerMovement : MonoBehaviour
         if (currentHealth<0)
         {
             myAnimator.SetTrigger("dead");  //playing death animation when player's health is less than zero
+            gameObject.SetActive(false);
         }
     }
 

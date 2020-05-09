@@ -16,10 +16,10 @@ public class DoDamageOnTrigger : MonoBehaviour
         //player will take damage if it collides with the spikes 
         if (collision.gameObject.name == "Ch-Maui" && !isDamage)
         {
+            Damage = GameObject.Find("Ch-Maui").GetComponent<PlayerMovement>();
             FindObjectOfType<AudioManager>().Play("hurt"); //method call for playing sound
             isDamage = true;
             Damage.takedamage(1); //taking 1 damage each time.
-
             Damage.myAnimator.SetLayerWeight(2, 1); //playing hurt animation
         }
     }
