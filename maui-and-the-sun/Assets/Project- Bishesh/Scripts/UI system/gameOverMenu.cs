@@ -20,6 +20,5 @@ public class gameOverMenu : MonoBehaviour
     public void retry()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); //loading active scene again on calling this method
-        mode.GetComponent<ModeSelection>().activeToggle(); //set timer from depending on the default mode
     }
 }

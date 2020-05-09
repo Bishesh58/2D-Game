@@ -13,14 +13,18 @@ public class TimerUI : MonoBehaviour
     [SerializeField]
     GameObject gameOverScrn;
     GameObject player;
-    private ToggleGroup mode;
+    ModeSelection toggleGroup;
+    
+
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        mode.GetComponent<ModeSelection>().activeToggle();
+        
+        toggleGroup = GameObject.Find("Toggle Group").GetComponent<ModeSelection>();
+        toggleGroup.logToggle();
         gameOverScrn = GameObject.Find("gameOverScreen");
         player = GameObject.Find("Ch-Maui");
         gameOverScrn.SetActive(false); //hiding game over screen on starting the game                    

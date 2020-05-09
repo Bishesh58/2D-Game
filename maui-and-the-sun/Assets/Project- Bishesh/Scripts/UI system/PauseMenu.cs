@@ -7,6 +7,7 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPause = false; //global variable
     public GameObject PauseMenuUI;
+    GameObject optionMenu;
 
     // Update is called once per frame
     void Update()
@@ -40,7 +41,10 @@ public class PauseMenu : MonoBehaviour
     public void loadMenu()
     {
         Time.timeScale = 1f; //Time is being set as default
+        optionMenu = GameObject.Find("OptionMenu");
+        optionMenu.SetActive(false);
         SceneManager.LoadScene("UI System"); //moving player into the UI system scene
+       
 
     }
     public void quitGame()
