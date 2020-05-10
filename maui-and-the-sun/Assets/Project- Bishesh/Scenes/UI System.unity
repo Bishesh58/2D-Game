@@ -1345,7 +1345,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -19, y: 0}
   m_SizeDelta: {x: 1900, y: 1068}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &482270520
@@ -4960,6 +4960,46 @@ PrefabInstance:
       propertyPath: sounds.Array.data[4].volume
       value: 0.34
       objectReference: {fileID: 0}
+    - target: {fileID: 9172500503212728497, guid: 709f15a8f97f39c41853c11f0ef13378,
+        type: 3}
+      propertyPath: sounds.Array.data[2].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9172500503212728497, guid: 709f15a8f97f39c41853c11f0ef13378,
+        type: 3}
+      propertyPath: sounds.Array.data[0].loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9172500503212728497, guid: 709f15a8f97f39c41853c11f0ef13378,
+        type: 3}
+      propertyPath: sounds.Array.data[0].audioMixer
+      value: 
+      objectReference: {fileID: 24300002, guid: f76f74bca0cec0d4bb7cb9e2f27686f6,
+        type: 2}
+    - target: {fileID: 9172500503212728497, guid: 709f15a8f97f39c41853c11f0ef13378,
+        type: 3}
+      propertyPath: sounds.Array.data[1].audioMixer
+      value: 
+      objectReference: {fileID: -2640343576436602244, guid: f76f74bca0cec0d4bb7cb9e2f27686f6,
+        type: 2}
+    - target: {fileID: 9172500503212728497, guid: 709f15a8f97f39c41853c11f0ef13378,
+        type: 3}
+      propertyPath: sounds.Array.data[2].audioMixer
+      value: 
+      objectReference: {fileID: 24300002, guid: f76f74bca0cec0d4bb7cb9e2f27686f6,
+        type: 2}
+    - target: {fileID: 9172500503212728497, guid: 709f15a8f97f39c41853c11f0ef13378,
+        type: 3}
+      propertyPath: sounds.Array.data[3].audioMixer
+      value: 
+      objectReference: {fileID: 24100000, guid: f76f74bca0cec0d4bb7cb9e2f27686f6,
+        type: 2}
+    - target: {fileID: 9172500503212728497, guid: 709f15a8f97f39c41853c11f0ef13378,
+        type: 3}
+      propertyPath: sounds.Array.data[4].audioMixer
+      value: 
+      objectReference: {fileID: 24300002, guid: f76f74bca0cec0d4bb7cb9e2f27686f6,
+        type: 2}
     - target: {fileID: 9172500503212728498, guid: 709f15a8f97f39c41853c11f0ef13378,
         type: 3}
       propertyPath: m_LocalPosition.x

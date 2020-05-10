@@ -48,6 +48,8 @@ public class PlayerMovement : MonoBehaviour
     public int maxHealth = 3;
     public int currentHealth;
     public HealthBar healthbar;
+    public GameObject gamoverScreen;
+   
    
     //inventory system
     private Inventory inventory;
@@ -319,11 +321,21 @@ public class PlayerMovement : MonoBehaviour
         //checking if player's health is zero
         if (currentHealth<0)
         {
+            myAnimator.SetLayerWeight(2, 1); //death animation is active
             myAnimator.SetTrigger("dead");  //playing death animation when player's health is less than zero
-            gameObject.SetActive(false);
+            StartCoroutine("wait");   //method waits for give seconds
+            gamoverScreen.SetActive(true);
+           
+            
         }
     }
+    public IEnumerator wait()
+    {
+        yield return new WaitForSeconds(3);
+        Destroy(gameObject);  //Destorying player
+        GameObject.Find("Timer").SetActive(false);
 
+    }
     //player can use health potions to increase health
     public void increaseHealth(int healthPlus)
     {

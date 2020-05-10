@@ -11,6 +11,7 @@ public class Tree3 : MonoBehaviour
     public string[] sentences;
     private int index;
     public float typingSpeed;
+    public GameObject wood;
 
 
     public void Start()
@@ -71,5 +72,7 @@ public class Tree3 : MonoBehaviour
     public void stopDialogue()
     {
         thirdTree.SetActive(false);
+        wood.SetActive(true);
+
     }
 }

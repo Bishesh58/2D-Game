@@ -1037,7 +1037,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 141597405}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 93.23, y: 0.4, z: 0}
+  m_LocalPosition: {x: 93.23, y: 0.31, z: 0}
   m_LocalScale: {x: 1.3878313, y: 1.1630925, z: 0.91582084}
   m_Children: []
   m_Father: {fileID: 590974842}
@@ -1606,7 +1606,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 230677518}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.145311, y: 1.7224593, z: -10}
+  m_LocalPosition: {x: 4.1447573, y: 1.7224593, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 420740736}
@@ -2258,13 +2258,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 411209141}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 104.841, y: -0.048, z: 0}
-  m_LocalScale: {x: 3.2426646, y: 2.7132125, z: 1.832014}
+  m_LocalRotation: {x: -0, y: -0, z: -0.299461, w: 0.9541086}
+  m_LocalPosition: {x: 104.69, y: -0.684, z: 0}
+  m_LocalScale: {x: 2.5423787, y: 2.1272671, z: 1.4363723}
   m_Children: []
   m_Father: {fileID: 590974842}
   m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -34.850002}
 --- !u!114 &411209143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6071,7 +6071,7 @@ GameObject:
   - component: {fileID: 1071651433}
   - component: {fileID: 1071651432}
   - component: {fileID: 1071651434}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Caribbean_2D_Platformer__0000s_0008_Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6155,7 +6155,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 4.5562506, y: -0.20095754}
+  m_Offset: {x: 4.5562506, y: -0.33586}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -6166,7 +6166,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 13.746895, y: 2.961915}
+  m_Size: {x: 13.746895, y: 2.69211}
   m_EdgeRadius: 0
 --- !u!1 &1083427191
 GameObject:
@@ -6756,7 +6756,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1262426435}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 145.93, y: 3.76, z: 0}
+  m_LocalPosition: {x: 145.93, y: 3.58, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 590974842}
@@ -6906,7 +6906,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1277512194}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.453955, y: 1.7224584, z: -10}
+  m_LocalPosition: {x: 14.4631815, y: 1.7224584, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7214,7 +7214,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1350799667}
   m_LocalRotation: {x: -0, y: -0, z: -0.7185628, w: 0.6954622}
-  m_LocalPosition: {x: 172.12, y: 0.25000012, z: 0}
+  m_LocalPosition: {x: 171.58, y: 0.25000012, z: 0}
   m_LocalScale: {x: 0.21533938, y: 0.2153393, z: 0.215339}
   m_Children: []
   m_Father: {fileID: 0}
@@ -11270,7 +11270,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2043486359}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 172.06999, y: -0.5500005, z: 0}
+  m_LocalPosition: {x: 171.53, y: -0.5500005, z: 0}
   m_LocalScale: {x: 1, y: 0.38899997, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -11545,7 +11545,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2060876687}
   m_LocalRotation: {x: -0, y: -0, z: -0.4279864, w: 0.90378517}
-  m_LocalPosition: {x: 148.83, y: 3.8, z: 0}
+  m_LocalPosition: {x: 149.18, y: 3.37, z: 0}
   m_LocalScale: {x: 0.76764, y: 0.76764, z: 0.76764}
   m_Children: []
   m_Father: {fileID: 590974842}
@@ -12632,6 +12632,11 @@ PrefabInstance:
       propertyPath: myAnimator
       value: 
       objectReference: {fileID: 9192078889367949142}
+    - target: {fileID: 9192078888017162387, guid: edfc55d639255b641b04eb4c35948919,
+        type: 3}
+      propertyPath: gamoverScreen
+      value: 
+      objectReference: {fileID: 1775331283}
     - target: {fileID: 9192078888017162388, guid: edfc55d639255b641b04eb4c35948919,
         type: 3}
       propertyPath: m_Name

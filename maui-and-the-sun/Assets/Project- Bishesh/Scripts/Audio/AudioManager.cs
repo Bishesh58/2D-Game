@@ -30,7 +30,6 @@ public class AudioManager : MonoBehaviour
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
-
         }
     }
 
@@ -52,7 +51,8 @@ public class AudioManager : MonoBehaviour
     //method
     public void Play (string name)
     {
-       Sound s = Array.Find(sounds, Sound => Sound.name == name); 
+
+       Sound s = Array.Find(sounds, Sound => Sound.name == name);
         if (s == null)
         {
             Debug.LogWarning("Sound: " + name + " not found!");
@@ -64,6 +64,7 @@ public class AudioManager : MonoBehaviour
 
     // controlling master volume from setting menu by exposing the parameters from audio Mixture
     public AudioMixer audioMixer;
+   
     public void setVolume(float volume)
     {
         audioMixer.SetFloat("volume", volume);  //"volume" represents parameter from audioMixture
