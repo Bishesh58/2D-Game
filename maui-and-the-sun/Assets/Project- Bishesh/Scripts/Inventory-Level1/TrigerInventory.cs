@@ -20,8 +20,9 @@ public class TrigerInventory : MonoBehaviour
             Destroy(gameObject);
             Destroy(arrow);
             messagebox.gameObject.SetActive(true);
-            Maui.GetComponent<Rigidbody2D>().isKinematic = true;
-            Maui.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
+            //Maui.GetComponent<Rigidbody2D>().isKinematic = true;
+            //Maui.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
+
         } 
     }
 }

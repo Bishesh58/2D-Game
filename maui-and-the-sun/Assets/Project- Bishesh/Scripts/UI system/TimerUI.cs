@@ -7,22 +7,22 @@ using UnityEngine.SceneManagement;
 
 public class TimerUI : MonoBehaviour
 {
-    // code to change after completion of level 2
+    
     public static float countdownStartValue = 0; //global variable
     public Text timerUI;
     [SerializeField]
     GameObject gameOverScrn;
     GameObject player;
     ModeSelection toggleGroup;
-    
 
 
 
 
-    // Start is called before the first frame update
+
+   // Start is called before the first frame update
     void Start()
     {
-        
+
         toggleGroup = GameObject.Find("Toggle Group").GetComponent<ModeSelection>();
         toggleGroup.logToggle();
         gameOverScrn = GameObject.Find("gameOverScreen");

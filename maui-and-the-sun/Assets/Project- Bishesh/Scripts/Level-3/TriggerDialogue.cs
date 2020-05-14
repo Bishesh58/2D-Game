@@ -16,6 +16,7 @@ public class TriggerDialogue : MonoBehaviour
     public GameObject hut;
     public GameObject hutBlock;
     bool playerInRange;
+    public GameObject continueButton;
 
 
     public void Start()
@@ -27,6 +28,10 @@ public class TriggerDialogue : MonoBehaviour
         if (playerInRange) // when player collides with this game object
         {
             DialogueBox.SetActive(true); //Showing dialogue Box
+        }
+        if (textDisplay.text == sentences[index])
+        {
+            continueButton.SetActive(true);
         }
     }
 
@@ -59,6 +64,7 @@ public class TriggerDialogue : MonoBehaviour
     //method to check if one sentence is completed and moving onto the next sentence
     public void nextSentences()
     {
+        continueButton.SetActive(false);
         if (index < sentences.Length - 1)
         {
             index++;

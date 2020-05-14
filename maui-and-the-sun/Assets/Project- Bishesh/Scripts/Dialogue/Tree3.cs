@@ -13,6 +13,7 @@ public class Tree3 : MonoBehaviour
     public float typingSpeed;
     public GameObject wood;
     public GameObject collectingWood;
+    public GameObject continueButton;
 
 
     public void Start()
@@ -26,6 +27,10 @@ public class Tree3 : MonoBehaviour
         if (playerInRange && Input.GetKeyDown(KeyCode.T))
         {
             thirdTree.SetActive(true);
+        }
+        if (textDisplay.text == sentences[index])
+        {
+            continueButton.SetActive(true);
         }
     }
     //Box colliders to check if player collides with the tree
@@ -56,6 +61,7 @@ public class Tree3 : MonoBehaviour
     //method to check if the Dialogue sentence is completed
     public void nextSentences()
     {
+        continueButton.SetActive(false);
         if (index < sentences.Length - 1)
         {
             index++;

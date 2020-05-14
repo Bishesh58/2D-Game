@@ -12,6 +12,7 @@ public class Tree1 : MonoBehaviour
     public string[] sentences;
     private int index;
     public float typingSpeed;
+    public GameObject continueButton;
     
 
 
@@ -26,6 +27,11 @@ public class Tree1 : MonoBehaviour
         if (playerInRange && Input.GetKeyDown(KeyCode.T))
         {
             firstTree.SetActive(true); //player is ready to start conversation
+        }
+
+        if (textDisplay.text == sentences[index])
+        {
+            continueButton.SetActive(true);
         }
     }
 
@@ -54,17 +60,21 @@ public class Tree1 : MonoBehaviour
         {
             textDisplay.text += letter;
             yield return new WaitForSeconds(typingSpeed);
+          
         }
     }
 
     //method to check if the Dialogue sentence is completed
     public void nextSentences()
     {
+        continueButton.SetActive(false);
         if (index < sentences.Length - 1)
         {
             index++;
             textDisplay.text = "";
-            StartCoroutine(Type()); 
+            StartCoroutine(Type());
+          
+
         }
         else
         {

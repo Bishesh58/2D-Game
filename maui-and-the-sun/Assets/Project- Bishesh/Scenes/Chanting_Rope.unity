@@ -1429,6 +1429,7 @@ MonoBehaviour:
     whakamaua kia mau kia ita!\""
   - Karakia done! Now our Taura is ready..
   typingSpeed: 0.02
+  continueButton: {fileID: 2137998894}
 --- !u!4 &180423617
 Transform:
   m_ObjectHideFlags: 0
@@ -3615,7 +3616,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 551337353}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7a10c40ab3042c4cb7ca7ac3deb30ad, type: 3}
+  m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &551337355

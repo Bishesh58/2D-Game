@@ -14,6 +14,7 @@ public class TriggerDialogue2 : MonoBehaviour
     public GameObject Brothers;
     public GameObject MovedBrothers;
     bool playerInRange;
+    public GameObject continueButton;
 
 
     public void Start()
@@ -25,6 +26,10 @@ public class TriggerDialogue2 : MonoBehaviour
         if (playerInRange) //player collides with this game object 
         {
             DialogueBox2.SetActive(true); //showing up dialogue box
+        }
+        if (textDisplay.text == sentences[index])
+        {
+            continueButton.SetActive(true);
         }
     }
 
@@ -57,6 +62,7 @@ public class TriggerDialogue2 : MonoBehaviour
     //checking if one sentence is completed and moving into the next sentence
     public void nextSentences()
     {
+        continueButton.SetActive(false);
         if (index < sentences.Length - 1)
         {
             index++;

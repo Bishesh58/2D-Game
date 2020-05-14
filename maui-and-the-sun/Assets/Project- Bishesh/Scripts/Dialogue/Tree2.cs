@@ -13,6 +13,7 @@ public class Tree2 : MonoBehaviour
     private int index;
     public float typingSpeed;
     public GameObject audio;
+    public GameObject continueButton;
 
 
     public void Start()
@@ -26,6 +27,10 @@ public class Tree2 : MonoBehaviour
         if (playerInRange && Input.GetKeyDown(KeyCode.T))
         {
             secondTree.SetActive(true);
+        }
+        if (textDisplay.text == sentences[index])
+        {
+            continueButton.SetActive(true);
         }
     }
     //Box colliders to check if player collides with the tree
@@ -56,6 +61,7 @@ public class Tree2 : MonoBehaviour
     //method to check if the Dialogue sentence is completed
     public void nextSentences()
     {
+        continueButton.SetActive(false);
         if (index < sentences.Length - 1)
         {
             index++;

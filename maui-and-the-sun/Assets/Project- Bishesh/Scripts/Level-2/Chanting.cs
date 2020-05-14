@@ -15,12 +15,19 @@ public class Chanting : MonoBehaviour
     public string[] sentences;
     private int index;
     public float typingSpeed;
+    public GameObject continueButton;
     
     public void Start()
     {
         StartCoroutine(Type()); //method to start function after given time
     }
-
+    public void Update()
+    {
+        if (textDisplay.text == sentences[index])
+        {
+            continueButton.SetActive(true);
+        }
+    }
     public void DestoryInfo() //destorying information box and showing karakia Dialogue Box
     {
         Destroy(dialogueBox.gameObject);
@@ -40,6 +47,7 @@ public class Chanting : MonoBehaviour
     //method to check if one sentence is finished typing
     public void nextSentences()
     {
+        continueButton.SetActive(false);
         if (index < sentences.Length - 1)
         {
             index++;
