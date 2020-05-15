@@ -14,7 +14,11 @@ public class SunDamage : MonoBehaviour
     GameObject sun;
     GameObject ropeLeft;
     public GameObject RightRope;
-   
+    public GameObject Rope1;
+    public GameObject Rope2;
+    public GameObject Rope3;
+    public GameObject Rope4;
+
 
 
     GameObject ropeRight;
@@ -54,6 +58,10 @@ public class SunDamage : MonoBehaviour
             Destroy(RightRope.gameObject);
             Destroy(player.gameObject);
             Destroy(sun.gameObject);
+            Destroy(Rope1.gameObject);
+            Destroy(Rope2.gameObject);
+            Destroy(Rope3.gameObject);
+            Destroy(Rope4.gameObject);
         }
     }
    
