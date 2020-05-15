@@ -49,7 +49,7 @@ public class ButtonHandler : MonoBehaviour
     //on method call, opens given link into the browser
     public void openLink()
     {
-        Application.OpenURL("https://www.youtube.com/watch?v=7kwu6c7rN0I");
+        Application.OpenURL("https://www.youtube.com/watch?v=984UPAEdKbs&feature=youtu.be");
     }
 
     

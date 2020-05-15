@@ -77,11 +77,11 @@ public class UI_Inventory : MonoBehaviour
             Inventory.InventorySlot tmpInventorySlot = inventorySlot;
 
             UI_ItemSlot uiItemSlot = itemSlotRectTransform.GetComponent<UI_ItemSlot>();
-            uiItemSlot.SetOnDropAction(() => {
-                // Dropped on this UI Item Slot
-                items draggedItem = UI_ItemDrag.Instance.GetItem();
-                inventory.AddItem(draggedItem, tmpInventorySlot);
-            });
+            //uiItemSlot.SetOnDropAction(() => {
+            //    // Dropped on this UI Item Slot
+            //    items draggedItem = UI_ItemDrag.Instance.GetItem();
+            //    inventory.AddItem(draggedItem, tmpInventorySlot);
+            //});
 
             x++;
             if (x > 4)
