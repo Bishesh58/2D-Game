@@ -44,8 +44,6 @@ public class PauseMenu : MonoBehaviour
         optionMenu = GameObject.Find("OptionMenu");
         optionMenu.SetActive(false);
         SceneManager.LoadScene("UI System"); //moving player into the UI system scene
-       
-
     }
     public void quitGame()
     {

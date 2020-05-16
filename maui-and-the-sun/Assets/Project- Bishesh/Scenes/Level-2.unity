@@ -3733,7 +3733,7 @@ GameObject:
   - component: {fileID: 587452041}
   - component: {fileID: 587452040}
   - component: {fileID: 587452039}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: StoneSpike_3 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4483,7 +4483,7 @@ GameObject:
   - component: {fileID: 697595706}
   - component: {fileID: 697595705}
   - component: {fileID: 697595707}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: StoneSpike_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4851,7 +4851,7 @@ GameObject:
   - component: {fileID: 742947562}
   - component: {fileID: 742947561}
   - component: {fileID: 742947560}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: StoneSpike_3 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7321,7 +7321,7 @@ GameObject:
   - component: {fileID: 1083427195}
   - component: {fileID: 1083427194}
   - component: {fileID: 1083427193}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: StoneSpike_3 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11695,7 +11695,7 @@ GameObject:
   - component: {fileID: 1650514776}
   - component: {fileID: 1650514775}
   - component: {fileID: 1650514774}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: StoneSpike_3 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12067,7 +12067,7 @@ GameObject:
   - component: {fileID: 1669330741}
   - component: {fileID: 1669330740}
   - component: {fileID: 1669330739}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: StoneSpike_3 (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

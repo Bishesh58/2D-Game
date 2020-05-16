@@ -8,9 +8,12 @@ public class HomePage : MonoBehaviour
 {
     public float delay = 10;
     public string NewLevel = "UI System";
+    GameObject optionMenu;
     void Start()
     {
         StartCoroutine(LoadLevelAfterDelay(delay));
+        optionMenu = GameObject.Find("OptionMenu");
+        optionMenu.SetActive(false);
     }
 
     IEnumerator LoadLevelAfterDelay(float delay)
