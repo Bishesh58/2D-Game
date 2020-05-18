@@ -11,8 +11,9 @@ public class ModeSelection : MonoBehaviour
     public Toggle easy;
     public Toggle intermediate;
     public Toggle hard;
-    
 
+
+   
     //checking what toggle is being active 
     public void logToggle()
     {
@@ -33,6 +34,5 @@ public class ModeSelection : MonoBehaviour
             TimerUI.countdownStartValue = 150; //setting up starting time
         }
     }
-   
    
 }

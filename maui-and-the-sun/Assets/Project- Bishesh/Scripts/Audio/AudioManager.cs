@@ -40,7 +40,7 @@ public class AudioManager : MonoBehaviour
        
         if (scene.name == "UI System")
         {
-            Play("backgroundMusic");
+           // Play("backgroundMusic");
         }
         if (scene.name == "Cut_Scene")
         {

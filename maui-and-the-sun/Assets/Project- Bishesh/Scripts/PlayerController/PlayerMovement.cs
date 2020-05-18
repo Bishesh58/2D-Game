@@ -5,6 +5,7 @@ using System;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using TMPro;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -42,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
     //point system
     [SerializeField]
     private TextMeshProUGUI healtpotionCounter, flaxplantCounter, woodCounter;
-    private int healtpotionAmount, flaxplantAmount, woodAmount;
+    private int healthpotionAmount, flaxplantAmount, woodAmount;
 
     //healthbar
     public int maxHealth = 3;
@@ -84,13 +85,13 @@ public class PlayerMovement : MonoBehaviour
         //collectables
         if (scene.name == "Level 2 v1.0")
         {
-            healtpotionAmount = 0;
+            healthpotionAmount = 0;
             flaxplantAmount = 0;
             woodAmount = 0;
         }
         if (scene.name == "Level 3 v1.0")
         {
-            healtpotionAmount = 0;
+            healthpotionAmount = 0;
         }
 
     }
@@ -98,21 +99,42 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update() 
     {
+
         HandleInput(); //method call
-        
         if (scene.name == "Level 2 v1.0") //setting up text amount for inventory item on level 2 
         {
+            //healthpotionUse
+            healthPotionButton = GameObject.Find("Slot1").GetComponent<Button>();
+            if (myAnimator.GetFloat("speed") < 0.01f)
+            {
+                healthPotionButton.interactable = true;
+            }
+            if (myAnimator.GetFloat("speed") > 0.01f || currentHealth >= 10)
+            {
+                healthPotionButton.interactable = false;
+            }
             //update amount of collectables
-            healtpotionCounter.text = "" + healtpotionAmount;
+            healtpotionCounter.text = "" + healthpotionAmount;
             flaxplantCounter.text = "" + flaxplantAmount;
             woodCounter.text = "" + woodAmount;
-            Debug.Log(healtpotionAmount);
+          
+           
         }
         if (scene.name == "Level 3 v1.0") // collecting health potion on level 3 
         {
-            healtpotionCounter.text = "" + healtpotionAmount;
+            //healthpotionUse
+            healthPotionButton = GameObject.Find("Slot1").GetComponent<Button>();
+            if (myAnimator.GetFloat("speed") < 0.01f)
+            {
+                healthPotionButton.interactable = true;
+            }
+            if (myAnimator.GetFloat("speed") > 0.01f)
+            {
+                healthPotionButton.interactable = false;
+            }
+            healtpotionCounter.text = "" + healthpotionAmount;
         }
-
+       
     }
 
     //setting up slots for inventory
@@ -140,7 +162,7 @@ public class PlayerMovement : MonoBehaviour
         //collecting helath potion, wood and flax plant
         if (collision.GetComponent<HealthPotion>())
         {
-            healtpotionAmount += 1;
+            healthpotionAmount += 1;
             Destroy(collision.gameObject);
         }
         if (collision.GetComponent<FlaxPlant>())
@@ -156,27 +178,24 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    private bool count;
-
+    private bool useFlag;
+    Button healthPotionButton;
+    
     //method to use health potion
     public void useHealthPotion()
     {
-        
-        if (!(healtpotionAmount <= 0))
+      
+        if (healthpotionAmount > 0)
         {
-            count = true;
-            healtpotionAmount -= 1; //decreasing health potion from the inventory on using
+            useFlag = true;
+            healthpotionAmount -= 1; //decreasing health potion from the inventory on using
             increaseHealth(1); //increasing the health of the player
         }
-        if (healtpotionAmount <= 0) //player can not use health potion when health potion is zero
+        if (healthpotionAmount <= 0) //player can not use health potion when health potion is zero
         {
-            healtpotionAmount = 0;
-            count = false;
+            healthpotionAmount = 0;
+            useFlag = false;
         }
-        //if (count == false)
-        //{
-           
-        //}
     }
 
 

@@ -7,18 +7,19 @@ using UnityEngine.SceneManagement;
 public class HomePage : MonoBehaviour
 {
     public float delay = 10;
-    public string NewLevel = "UI System";
     GameObject optionMenu;
+
     void Start()
     {
+       
         StartCoroutine(LoadLevelAfterDelay(delay));
-        optionMenu = GameObject.Find("OptionMenu");
-        optionMenu.SetActive(false);
     }
 
     IEnumerator LoadLevelAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        SceneManager.LoadScene(NewLevel);
+        optionMenu = GameObject.Find("OptionMenu");
+        optionMenu.SetActive(false);
+        SceneManager.LoadScene("UI System"); //moving player into the UI system scene
     }
 }

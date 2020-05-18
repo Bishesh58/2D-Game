@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene(SceneManager. GetActiveScene().buildIndex + 1); //loading up next scene index
-      
+        Hangi_layerController.checkmarkCount = 0;
     }
     public void QuiteGame()
     {

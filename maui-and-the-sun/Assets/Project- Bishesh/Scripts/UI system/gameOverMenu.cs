@@ -19,6 +19,7 @@ public class gameOverMenu : MonoBehaviour
 
     public void retry()
     {
+        Hangi_layerController.checkmarkCount = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); //loading active scene again on calling this method
     }
 }

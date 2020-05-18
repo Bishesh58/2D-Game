@@ -40,6 +40,7 @@ public class PauseMenu : MonoBehaviour
 
     public void loadMenu()
     {
+        Hangi_layerController.checkmarkCount = 0;
         Time.timeScale = 1f; //Time is being set as default
         optionMenu = GameObject.Find("OptionMenu");
         optionMenu.SetActive(false);

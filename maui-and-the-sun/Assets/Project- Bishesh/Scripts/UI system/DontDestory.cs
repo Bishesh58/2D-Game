@@ -14,7 +14,6 @@ public class DontDestory : MonoBehaviour
     private void Awake()
     {
         canvasGroup = GetComponent<CanvasGroup>();
-       
     }
 
     void Start()

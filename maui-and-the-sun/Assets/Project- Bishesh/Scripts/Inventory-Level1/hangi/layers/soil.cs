@@ -12,6 +12,7 @@ public class soil : MonoBehaviour, IDropHandler
     public event EventHandler<OnItemDroppedEventArgs> OnItemDropped;
     private Image checkedImage;
     private int dropCount = 0;
+   
 
     public class OnItemDroppedEventArgs : EventArgs
     {

@@ -12,17 +12,19 @@ public class vege1 : MonoBehaviour, IDropHandler
     //event to check if item is dropped
     public event EventHandler<OnItemDroppedEventArgs> OnItemDropped;
     private Image checkedImage;
-    private int dropCount;
-
+    private int dropCount = 0;
+    CanvasGroup canvasGroup;
     private void Start()
     {
         checkedImage = transform.Find("checkedVege1").GetComponent<Image>();
+        canvasGroup = GetComponent<CanvasGroup>();
     }
     public class OnItemDroppedEventArgs : EventArgs
     {
         public items items; // getting the item from class items
+      
     }
-
+   
     // event handler for item is being dropped on this layer
     public void OnDrop(PointerEventData eventData)
     {
@@ -39,6 +41,7 @@ public class vege1 : MonoBehaviour, IDropHandler
             {
                 d.parentToReturn = this.transform; //setting current slot as parent slot for the dropped item
                 eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;  //snapping the item onto the slot
+                canvasGroup.blocksRaycasts = false;
                 checkedImage.gameObject.SetActive(true); //correct item is dropped and green checkmark is shown 
                 if (dropCount <=1)
                 {
