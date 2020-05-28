@@ -42,8 +42,12 @@ public class PlayerMovement : MonoBehaviour
 
     //point system
     [SerializeField]
-    private TextMeshProUGUI healtpotionCounter, flaxplantCounter, woodCounter;
+    private TextMeshProUGUI healtpotionCounter, flaxplantCounter, woodCounter, healtpotionCounter3;
     private int healthpotionAmount, flaxplantAmount, woodAmount;
+    private bool useFlag;
+    Button healthPotionButton;
+    [SerializeField]
+    private Button healthPotionButton3;
 
     //healthbar
     public int maxHealth = 3;
@@ -123,16 +127,16 @@ public class PlayerMovement : MonoBehaviour
         if (scene.name == "Level 3 v1.0") // collecting health potion on level 3 
         {
             //healthpotionUse
-            healthPotionButton = GameObject.Find("Slot1").GetComponent<Button>();
+            //healthPotionButton3 = GameObject.Find("SlotHealthPotion").GetComponent<Button>();
             if (myAnimator.GetFloat("speed") < 0.01f)
             {
-                healthPotionButton.interactable = true;
+                healthPotionButton3.interactable = true;
             }
-            if (myAnimator.GetFloat("speed") > 0.01f)
+            if (myAnimator.GetFloat("speed") > 0.01f || currentHealth >= 10)
             {
-                healthPotionButton.interactable = false;
+                healthPotionButton3.interactable = false;
             }
-            healtpotionCounter.text = "" + healthpotionAmount;
+            healtpotionCounter3.text = "" + healthpotionAmount;
         }
        
     }
@@ -178,8 +182,7 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    private bool useFlag;
-    Button healthPotionButton;
+   
     
     //method to use health potion
     public void useHealthPotion()
