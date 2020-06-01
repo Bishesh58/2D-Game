@@ -7,7 +7,7 @@ public class ParticleCollissionDamage : MonoBehaviour
 
     public PlayerMovement Damage;
     public TimerUI gameOver;
-    bool isDamage;
+   
     GameObject gameOverScrn;
     GameObject player;
 
@@ -26,7 +26,7 @@ public class ParticleCollissionDamage : MonoBehaviour
     void Start()
     {
 
-        gameOverScrn = GameObject.Find("gameOverScreen");
+       // gameOverScrn = GameObject.Find("gameOverScreen");
         player = GameObject.Find("Ch-Maui");
         part = GetComponent<ParticleSystem>();
         collisionEvents = new List<ParticleCollisionEvent>();
@@ -41,17 +41,15 @@ public class ParticleCollissionDamage : MonoBehaviour
         PARTICLE_COLLISION = true;
 
 
-        if (collision.transform.tag == "Player" && !isDamage)
+        if (collision.transform.tag == "Player")
         {
             Debug.Log("Particle Damage");
             Damage.takedamage(2);
-            isDamage = true;
             Damage.myAnimator.SetLayerWeight(2, 1);
 
             if (Damage.currentHealth <= 0f)
             {
-                Debug.Log("player died");
-                gameOverScrn.SetActive(true);
+               // gameOverScrn.SetActive(true);
                 Destroy(player.gameObject);
             }
             else
@@ -80,7 +78,6 @@ public class ParticleCollissionDamage : MonoBehaviour
         }
         if (Damage.currentHealth <= 0f)
         {
-            Debug.Log("player died");
             gameOverScrn.SetActive(true);
             Destroy(player.gameObject);
         }
