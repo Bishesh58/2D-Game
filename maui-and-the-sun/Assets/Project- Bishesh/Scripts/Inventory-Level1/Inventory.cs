@@ -30,9 +30,9 @@ public class Inventory
 
         addItem(new items { itemType = items.ItemType.soil, amount = 1 });
         //addItem(new items { itemType = items.ItemType.leaves, amount = 1 });
-        addItem(new items { itemType = items.ItemType.vege1, amount = 1 });
+        //addItem(new items { itemType = items.ItemType.vege1, amount = 1 });
         //addItem(new items { itemType = items.ItemType.meat, amount = 1 });
-        addItem(new items { itemType = items.ItemType.vege2, amount = 1 });
+        //addItem(new items { itemType = items.ItemType.vege2, amount = 1 });
         addItem(new items { itemType = items.ItemType.branches, amount = 1 });
         addItem(new items { itemType = items.ItemType.smallStones, amount = 1 });
         addItem(new items { itemType = items.ItemType.largeStones, amount = 1 });

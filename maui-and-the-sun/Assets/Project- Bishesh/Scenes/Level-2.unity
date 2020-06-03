@@ -1698,7 +1698,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 230677518}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.515009, y: 1.7224593, z: -10}
+  m_LocalPosition: {x: 10.515824, y: 1.7224593, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 420740736}
@@ -3044,7 +3044,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 451357380}
   m_LocalRotation: {x: -0, y: -0, z: -0.32464552, w: 0.9458358}
-  m_LocalPosition: {x: 162.99, y: 0.91, z: 0}
+  m_LocalPosition: {x: 170.16, y: -0.53, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 590974842}
@@ -8315,7 +8315,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1277512194}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.459002, y: 1.7224584, z: -10}
+  m_LocalPosition: {x: 14.445417, y: 1.7224584, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -15568,7 +15568,7 @@ PrefabInstance:
     - target: {fileID: 4172690899913474748, guid: 0092c7e2bcc843e4ab05e011dff6fedf,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.38000488
+      value: -0.15802002
       objectReference: {fileID: 0}
     - target: {fileID: 4172690899913474748, guid: 0092c7e2bcc843e4ab05e011dff6fedf,
         type: 3}
@@ -15579,6 +15579,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172690899913474748, guid: 0092c7e2bcc843e4ab05e011dff6fedf,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1083
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172690899913474748, guid: 0092c7e2bcc843e4ab05e011dff6fedf,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1083
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172690899913474748, guid: 0092c7e2bcc843e4ab05e011dff6fedf,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.1083
       objectReference: {fileID: 0}
     - target: {fileID: 6120846802963659231, guid: 0092c7e2bcc843e4ab05e011dff6fedf,
         type: 3}
