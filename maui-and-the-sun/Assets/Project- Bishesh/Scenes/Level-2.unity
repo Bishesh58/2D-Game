@@ -8465,6 +8465,7 @@ GameObject:
   - component: {fileID: 1290568059}
   - component: {fileID: 1290568061}
   - component: {fileID: 1290568060}
+  - component: {fileID: 1290568062}
   m_Layer: 5
   m_Name: MovementHint
   m_TagString: Untagged
@@ -8529,6 +8530,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1290568058}
   m_CullTransparentMesh: 0
+--- !u!114 &1290568062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290568058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86977ef2b9cb76541b98c21e7fb006cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1315745075
 GameObject:
   m_ObjectHideFlags: 0
