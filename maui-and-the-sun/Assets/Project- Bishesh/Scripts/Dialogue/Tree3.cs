@@ -6,6 +6,7 @@ using TMPro;
 public class Tree3 : MonoBehaviour
 {
     bool playerInRange;
+    private bool isAlreadyTalking;
     public GameObject thirdTree;
     public TextMeshProUGUI textDisplay;
     public string[] sentences;
@@ -36,7 +37,7 @@ public class Tree3 : MonoBehaviour
     //Box colliders to check if player collides with the tree
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.name == "Ch-Maui")
+        if (other.gameObject.name == "Ch-Maui" && !isAlreadyTalking)
         {
             playerInRange = true; //player is close to the tree3
         }
@@ -46,6 +47,7 @@ public class Tree3 : MonoBehaviour
     {
         if (other.gameObject.name == "Ch-Maui")
         {
+            isAlreadyTalking = false;
             playerInRange = false; //player is far from the tree3
         }
     }

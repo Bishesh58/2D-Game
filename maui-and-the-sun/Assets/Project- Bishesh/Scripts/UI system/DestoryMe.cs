@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class DestoryMe : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void FixedUpdate()
     {
-        
-    }
+        if (gameObject.activeSelf)
+        {
+            StartCoroutine(RemoveAfterSeconds(15, gameObject));
+        }
 
-    // Update is called once per frame
-    void Update()
+    }
+    IEnumerator RemoveAfterSeconds(int seconds, GameObject obj)
     {
-        
+        yield return new WaitForSeconds(15);
+        Destroy(obj);
     }
 }

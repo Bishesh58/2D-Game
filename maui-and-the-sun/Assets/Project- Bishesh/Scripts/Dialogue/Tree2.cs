@@ -7,6 +7,7 @@ public class Tree2 : MonoBehaviour
 {
     //setting up parameters
     private bool playerInRange;
+    private bool isAlreadyTalking;
     public GameObject secondTree;
     public TextMeshProUGUI textDisplay;
     public string[] sentences;
@@ -36,8 +37,9 @@ public class Tree2 : MonoBehaviour
     //Box colliders to check if player collides with the tree
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.name == "Ch-Maui")
+        if (other.gameObject.name == "Ch-Maui" && !isAlreadyTalking)
         {
+            isAlreadyTalking = false;
             playerInRange = true; //player is close to the tree2
         }
     }
