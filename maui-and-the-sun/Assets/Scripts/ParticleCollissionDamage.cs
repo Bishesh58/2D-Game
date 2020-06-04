@@ -44,13 +44,13 @@ public class ParticleCollissionDamage : MonoBehaviour
         if (collision.transform.tag == "Player")
         {
             Debug.Log("Particle Damage");
-            Damage.takedamage(2);
+            Damage.takedamage(1);
             Damage.myAnimator.SetLayerWeight(2, 1);
 
             if (Damage.currentHealth <= 0f)
             {
                // gameOverScrn.SetActive(true);
-                Destroy(player.gameObject);
+               // Destroy(player.gameObject);
             }
             else
             {

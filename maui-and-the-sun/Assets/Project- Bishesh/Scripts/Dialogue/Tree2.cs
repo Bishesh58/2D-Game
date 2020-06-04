@@ -7,7 +7,7 @@ public class Tree2 : MonoBehaviour
 {
     //setting up parameters
     private bool playerInRange;
-    private bool isAlreadyTalking;
+    private bool isAlreadyTalking = false;
     public GameObject secondTree;
     public TextMeshProUGUI textDisplay;
     public string[] sentences;
@@ -39,7 +39,7 @@ public class Tree2 : MonoBehaviour
     {
         if (other.gameObject.name == "Ch-Maui" && !isAlreadyTalking)
         {
-            isAlreadyTalking = false;
+            
             playerInRange = true; //player is close to the tree2
         }
     }
@@ -48,6 +48,7 @@ public class Tree2 : MonoBehaviour
     {
         if (other.gameObject.name == "Ch-Maui")
         {
+            isAlreadyTalking = true;
             playerInRange = false; //player is far from the tree2
         }
     }
