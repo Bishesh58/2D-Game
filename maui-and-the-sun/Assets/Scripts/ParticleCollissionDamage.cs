@@ -41,11 +41,12 @@ public class ParticleCollissionDamage : MonoBehaviour
         PARTICLE_COLLISION = true;
 
 
-        if (collision.transform.tag == "Player" && !isDamage)
+        if (collision.transform.tag == "Player")
         {
             Debug.Log("Particle Damage");
-            Damage.takedamage(2);
-            isDamage = true;
+            Damage.takedamage(1);
+            isDamage = false;
+            StartCoroutine(waitForSecond(5));
             Damage.myAnimator.SetLayerWeight(2, 1);
 
             if (Damage.currentHealth <= 0f)
@@ -65,11 +66,18 @@ public class ParticleCollissionDamage : MonoBehaviour
  
     }
 
+    IEnumerator waitForSecond(int seconds)
+    {
+        yield return new WaitForSeconds(5);
+        isDamage = true;
+    }
+
 
     private void Update()
     {
         if (PARTICLE_COLLISION)
         {
+            StartCoroutine(waitForSecond(5));
             //isDamage = false;
             //Damage.myAnimator.SetLayerWeight(2, 0);
             // now you can write your code for after collision ends
