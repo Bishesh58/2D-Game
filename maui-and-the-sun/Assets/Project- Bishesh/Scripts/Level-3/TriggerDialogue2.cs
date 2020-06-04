@@ -15,6 +15,7 @@ public class TriggerDialogue2 : MonoBehaviour
     public GameObject MovedBrothers;
     bool playerInRange;
     public GameObject continueButton;
+    public GameObject holdMaui1;
 
 
     public void Start()
@@ -82,6 +83,7 @@ public class TriggerDialogue2 : MonoBehaviour
         Destroy(DialogueBox2);
         Destroy(Brothers.gameObject); //destorying old brothers character
         MovedBrothers.SetActive(true); //showing moved brothers
+        holdMaui1.SetActive(false);
     }
 
 }
