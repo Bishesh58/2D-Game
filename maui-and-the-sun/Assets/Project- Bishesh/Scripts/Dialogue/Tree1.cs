@@ -50,7 +50,7 @@ public class Tree1 : MonoBehaviour
     {
         if (other.gameObject.name == "Ch-Maui")
         {
-            isAlreadyTalking = true;
+           
             playerInRange = false; //player is far from the tree1
         }
     }
@@ -90,5 +90,6 @@ public class Tree1 : MonoBehaviour
     public void stopDialogue()
     {
         firstTree.SetActive(false);
+        isAlreadyTalking = true;
     }
 }
