@@ -17,6 +17,7 @@ public class TriggerDialogue : MonoBehaviour
     public GameObject hutBlock;
     bool playerInRange;
     public GameObject continueButton;
+    public GameObject infodialogue;
 
 
     public void Start()
@@ -40,6 +41,10 @@ public class TriggerDialogue : MonoBehaviour
         if (other.gameObject.name == "Ch-Maui")
         {
             playerInRange = true;
+            if (infodialogue.activeSelf)
+            {
+                infodialogue.SetActive(false);
+            }
         }
     }
 

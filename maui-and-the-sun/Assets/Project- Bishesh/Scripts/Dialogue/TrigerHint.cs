@@ -8,15 +8,21 @@ public class TrigerHint : MonoBehaviour
     public GameObject DialogueHint;
     public GameObject Maui;
     public bool playerInRange;
+    public GameObject infoDialogue;
 
-    
+
     //If player collides with the Plant then we show hint Dialogue
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.name == "Ch-Maui")
         {
-            playerInRange = true; 
+            playerInRange = true;
             DialogueHint.gameObject.SetActive(true);
+            if (infoDialogue.activeSelf)
+            {
+                infoDialogue.SetActive(false);
+            }
+           
         }
     }
    

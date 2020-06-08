@@ -45,9 +45,11 @@ public class ParticleCollissionDamage : MonoBehaviour
         {
             Debug.Log("Particle Damage");
             Damage.takedamage(1);
+            Damage.myAnimator.SetLayerWeight(2, 1);
             isDamage = false;
             StartCoroutine(waitForSecond(5));
-            Damage.myAnimator.SetLayerWeight(2, 1);
+            
+
 
             if (Damage.currentHealth <= 0f)
             {
@@ -70,6 +72,11 @@ public class ParticleCollissionDamage : MonoBehaviour
     {
         yield return new WaitForSeconds(5);
         isDamage = true;
+        if (player.activeSelf)
+        {
+            Damage.myAnimator.SetLayerWeight(2, 0);
+        }
+       
     }
 
 

@@ -15114,7 +15114,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 139467299, guid: 0092c7e2bcc843e4ab05e011dff6fedf, type: 3}
       propertyPath: m_text
-      value: "Congratulation!!! (Tau k\u0113!)\nYou are a winner! \nWithout a doubt,
+      value: "Congratulations!!! (Tau k\u0113!)\nYou are a winner! \nWithout a doubt,
         you are the champion of the first gruelling stage"
       objectReference: {fileID: 0}
     - target: {fileID: 139467299, guid: 0092c7e2bcc843e4ab05e011dff6fedf, type: 3}
@@ -16273,6 +16273,11 @@ PrefabInstance:
       propertyPath: gamoverScreen
       value: 
       objectReference: {fileID: 1775331283}
+    - target: {fileID: 9192078888017162387, guid: edfc55d639255b641b04eb4c35948919,
+        type: 3}
+      propertyPath: airControl
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9192078888017162388, guid: edfc55d639255b641b04eb4c35948919,
         type: 3}
       propertyPath: m_Name

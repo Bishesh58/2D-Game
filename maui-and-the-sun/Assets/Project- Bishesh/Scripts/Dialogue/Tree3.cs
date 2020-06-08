@@ -15,6 +15,8 @@ public class Tree3 : MonoBehaviour
     public GameObject wood;
     public GameObject collectingWood;
     public GameObject continueButton;
+    public GameObject firstTree;
+    public GameObject secondTree;
 
 
     public void Start()
@@ -28,6 +30,12 @@ public class Tree3 : MonoBehaviour
         if (playerInRange && Input.GetKeyDown(KeyCode.T))
         {
             thirdTree.SetActive(true);
+            if (firstTree.activeSelf || secondTree.activeSelf)
+            {
+                firstTree.SetActive(false);
+                secondTree.SetActive(false);
+                
+            }
         }
         if (textDisplay.text == sentences[index])
         {

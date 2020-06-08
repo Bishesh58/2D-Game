@@ -14,6 +14,8 @@ public class Tree1 : MonoBehaviour
     private int index;
     public float typingSpeed;
     public GameObject continueButton;
+    public GameObject secondTree;
+    public GameObject thirdTree;
     
 
 
@@ -28,6 +30,11 @@ public class Tree1 : MonoBehaviour
         if (playerInRange && Input.GetKeyDown(KeyCode.T))
         {
             firstTree.SetActive(true); //player is ready to start conversation
+            if (secondTree.activeSelf || thirdTree.activeSelf)
+            {
+                secondTree.SetActive(false);
+                thirdTree.SetActive(false);
+            }
         }
 
         if (textDisplay.text == sentences[index])
