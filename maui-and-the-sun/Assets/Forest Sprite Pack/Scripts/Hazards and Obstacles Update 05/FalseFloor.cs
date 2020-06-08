@@ -30,7 +30,7 @@ public class FalseFloor : MonoBehaviour {
     {
         if (collision.gameObject.name == "Player" && !triggerFloor)
         {
-            triggerFloor = true;
+           // triggerFloor = true;
         }
     }
 

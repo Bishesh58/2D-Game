@@ -72,11 +72,7 @@ public class ParticleCollissionDamage : MonoBehaviour
     {
         yield return new WaitForSeconds(5);
         isDamage = true;
-        if (player.activeSelf)
-        {
-            Damage.myAnimator.SetLayerWeight(2, 0);
-        }
-       
+        Damage.myAnimator.SetLayerWeight(2, 0);
     }
 
 
@@ -85,8 +81,8 @@ public class ParticleCollissionDamage : MonoBehaviour
         if (PARTICLE_COLLISION)
         {
             StartCoroutine(waitForSecond(5));
-            //isDamage = false;
-            //Damage.myAnimator.SetLayerWeight(2, 0);
+            isDamage = false;
+            Damage.myAnimator.SetLayerWeight(2, 0);
             // now you can write your code for after collision ends
         }
         if (!PARTICLE_COLLISION)

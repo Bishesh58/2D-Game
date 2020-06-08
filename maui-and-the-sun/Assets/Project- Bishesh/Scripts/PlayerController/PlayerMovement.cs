@@ -199,8 +199,13 @@ public class PlayerMovement : MonoBehaviour
             healthpotionAmount = 0;
             useFlag = false;
         }
+        StartCoroutine(waitForSecond(3));
     }
-
+    IEnumerator waitForSecond(int seconds)
+    {
+        yield return new WaitForSeconds(3);
+        jump = true;
+    }
 
     void FixedUpdate()    //fixedUpdate updates on fixed amount of time, regardless of frames  
     {
