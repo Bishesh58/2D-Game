@@ -8,6 +8,7 @@ public class TrigerRope : MonoBehaviour
     public GameObject maui;
     public GameObject Hint;
     public GameObject Ropebutton;
+    public Button ropeButton;
    
 
     
@@ -17,6 +18,7 @@ public class TrigerRope : MonoBehaviour
         {
             Hint.SetActive(true); //hint message box is shown 
             useRope.isReadyToUse = true;
+            ropeButton.interactable = true;
             // maui.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
         }

@@ -54,6 +54,8 @@ public class PlayerMovement : MonoBehaviour
     public int currentHealth;
     public HealthBar healthbar;
     public GameObject gamoverScreen;
+    bool handleMovement;
+    bool handleInput;
    
    
     //inventory system
@@ -191,20 +193,33 @@ public class PlayerMovement : MonoBehaviour
         if (healthpotionAmount > 0)
         {
             useFlag = true;
+            if (scene.name == "Level 2 v1.0")
+            {
+                healthPotionButton.interactable = true;
+            }
             healthpotionAmount -= 1; //decreasing health potion from the inventory on using
             increaseHealth(1); //increasing the health of the player
+            StartCoroutine(waitForSecond(5));
         }
         if (healthpotionAmount <= 0) //player can not use health potion when health potion is zero
         {
+            healthPotionButton.interactable = false;
             healthpotionAmount = 0;
             useFlag = false;
         }
-        StartCoroutine(waitForSecond(3));
+        //handleMovement = false;
+        //handleInput = false;
+        StartCoroutine(waitForSecond(5));
     }
     IEnumerator waitForSecond(int seconds)
     {
-        yield return new WaitForSeconds(3);
-        jump = true;
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            yield return new WaitForSeconds(5);
+        }
+       
+        //handleMovement = true;
+        //handleInput = true;
     }
 
     void FixedUpdate()    //fixedUpdate updates on fixed amount of time, regardless of frames  
@@ -222,6 +237,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleMovement(float horizontal) //Controlling the player Movement
     {
+        handleMovement = true;
         if (myRigidbody.velocity.y < 0)
         {
             myAnimator.SetBool("land", true); //landing animation is set when player is not jumping
@@ -277,6 +293,7 @@ public class PlayerMovement : MonoBehaviour
     //handing keypress
     private void HandleInput()
     {
+        handleInput = true;
         if (Input.GetKeyDown(KeyCode.Space))
         {
             jump = true; //player can jump if 'space' is pressed
